@@ -15,6 +15,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Setup dependencies
+        run: npm install
       - name: Prettier Check
         run: npm run prettier:check
       - name: Test
