@@ -10,7 +10,9 @@
     "storybook": "start-storybook -h localhost -p 6006",
     "build-storybook": "build-storybook",
     "test": "vitest run src",
-    "test:watch": "vitest src"
+    "test:watch": "vitest src",
+    "prettier:write": "prettier --write src/",
+    "prettier:check": "prettier --check src/"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
@@ -26,6 +28,8 @@
     "@testing-library/svelte": "^3.2.2",
     "babel-loader": "^8.2.5",
     "jsdom": "^20.0.2",
+    "prettier": "^2.7.1",
+    "prettier-plugin-svelte": "^2.8.0",
     "svelte": "^3.52.0",
     "svelte-loader": "^3.1.3",
     "vite": "^3.2.0",

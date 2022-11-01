@@ -1,12 +1,12 @@
-import { within, userEvent } from '@storybook/testing-library';
-import Page from './Page.svelte';
+import { within, userEvent } from "@storybook/testing-library";
+import Page from "./Page.svelte";
 
 export default {
-  title: 'Example/Page',
+  title: "Example/Page",
   component: Page,
   parameters: {
     // More on Story layout: https://storybook.js.org/docs/svelte/configure/story-layout
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
 };
 
@@ -22,6 +22,6 @@ LoggedOut.args = {};
 export const LoggedIn = Template.bind({});
 LoggedIn.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  const loginButton = await canvas.getByRole('button', { name: /Log in/i });
+  const loginButton = await canvas.getByRole("button", { name: /Log in/i });
   await userEvent.click(loginButton);
 };

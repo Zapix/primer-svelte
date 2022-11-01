@@ -1,16 +1,16 @@
-import Header from './Header.svelte';
+import Header from "./Header.svelte";
 
 export default {
-  title: 'Example/Header',
+  title: "Example/Header",
   component: Header,
   parameters: {
     // More on Story layout: https://storybook.js.org/docs/svelte/configure/story-layout
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
   argTypes: {
-    onLogin: { action: 'onLogin' },
-    onLogout: { action: 'onLogout' },
-    onCreateAccount: { action: 'onCreateAccount' },
+    onLogin: { action: "onLogin" },
+    onLogout: { action: "onLogout" },
+    onCreateAccount: { action: "onCreateAccount" },
   },
 };
 
@@ -27,7 +27,7 @@ const Template = (args) => ({
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {
   user: {
-    name: 'Jane Doe',
+    name: "Jane Doe",
   },
 };
 
