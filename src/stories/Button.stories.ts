@@ -1,4 +1,5 @@
 import Button from "./Button.svelte";
+import type { ButtonSize } from "./Button.svelte";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 // More on argTypes: https://storybook.js.org/docs/svelte/api/argtypes
@@ -17,8 +18,16 @@ export default {
   },
 };
 
+type ArgsType = {
+  backgroundColor: string,
+  label: string,
+  onClick: (event: Event) => void,
+  primary: boolean,
+  size: ButtonSize
+}
+
 // More on component templates: https://storybook.js.org/docs/svelte/writing-stories/introduction#using-args
-const Template = (args) => ({
+const Template = (args: ArgsType) => ({
   Component: Button,
   props: args,
   on: {
