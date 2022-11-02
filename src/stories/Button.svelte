@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import "./button.css";
   import { createEventDispatcher } from "svelte";
   /**
@@ -9,11 +9,11 @@
   /**
    * What background color to use
    */
-  export let backgroundColor;
+  export let backgroundColor: string = "";
   /**
    * How large should the button be?
    */
-  export let size = "medium";
+  export let size: string = "medium";
   /**
    * Button contents
    */
