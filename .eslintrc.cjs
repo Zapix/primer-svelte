@@ -1,6 +1,15 @@
 module.exports = {
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking'
+  ],
   parser: '@typescript-eslint/parser',
+  parserOptions: {
+    tsconfigRootDir: __dirname,
+    project: ['./tsconfig.json'],
+    extraFileExtensions: ['.svelte'],
+  },
   plugins: [
     'svelte3',
     '@typescript-eslint'
@@ -12,7 +21,7 @@ module.exports = {
     }
   ],
   settings: {
-    'svelte3/typescript': true,
+    'svelte3/typescript': () => require('typescript'),
   },
   root: true,
 };
