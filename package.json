@@ -13,7 +13,8 @@
     "test": "vitest run src",
     "test:watch": "vitest src",
     "prettier:write": "prettier --write src/",
-    "prettier:check": "prettier --check src/"
+    "prettier:check": "prettier --check src/",
+    "lint": "eslint src/"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
@@ -28,7 +29,11 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/svelte": "^3.2.2",
     "@tsconfig/svelte": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
     "babel-loader": "^8.2.5",
+    "eslint": "^8.26.0",
+    "eslint-plugin-svelte3": "^4.0.0",
     "jsdom": "^20.0.2",
     "prettier": "^2.7.1",
     "prettier-plugin-svelte": "^2.8.0",
