@@ -1,20 +1,24 @@
-<script>
+<script lang="ts" context="module">
+  export type User = { name: string };
+</script>
+
+<script lang="ts">
   import "./header.css";
   import Button from "./Button.svelte";
 
   import { createEventDispatcher } from "svelte";
 
-  export let user = null;
+  export let user: User | null = null;
 
   const dispatch = createEventDispatcher();
 
-  function onLogin(event) {
+  function onLogin(event: Event) {
     dispatch("login", event);
   }
-  function onLogout(event) {
+  function onLogout(event: Event) {
     dispatch("logout", event);
   }
-  function onCreateAccount(event) {
+  function onCreateAccount(event: Event) {
     dispatch("createAccount", event);
   }
 </script>
