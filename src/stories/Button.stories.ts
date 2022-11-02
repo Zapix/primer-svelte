@@ -19,13 +19,14 @@ export default {
 };
 
 type ArgsType = {
-  backgroundColor: string,
-  label: string,
-  onClick: (event: Event) => void,
-  primary: boolean,
-  size: ButtonSize
-}
+  backgroundColor: string;
+  label: string;
+  onClick: (event: Event) => void;
+  primary: boolean;
+  size: ButtonSize;
+};
 
+/* eslint-disable */
 // More on component templates: https://storybook.js.org/docs/svelte/writing-stories/introduction#using-args
 const Template = (args: ArgsType) => ({
   Component: Button,
@@ -58,3 +59,4 @@ Small.args = {
   size: "small",
   label: "Button",
 };
+/* eslint-enable */

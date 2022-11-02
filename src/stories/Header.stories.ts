@@ -1,4 +1,5 @@
 import Header from "./Header.svelte";
+import type { User } from './Header.svelte';
 
 export default {
   title: "Example/Header",
@@ -14,7 +15,16 @@ export default {
   },
 };
 
-const Template = (args) => ({
+type ArgsType = {
+  user: User | null;
+  onLogin: (e: Event) => void;
+  onLogout: (e: Event) => void;
+  onCreateAccount: (e: Event) => void;
+};
+
+
+/* eslint-disable */
+const Template = (args: ArgsType) => ({
   Component: Header,
   props: args,
   on: {
@@ -33,3 +43,4 @@ LoggedIn.args = {
 
 export const LoggedOut = Template.bind({});
 LoggedOut.args = {};
+/* eslint-enable */
