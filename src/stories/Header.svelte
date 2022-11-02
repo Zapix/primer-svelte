@@ -1,6 +1,7 @@
 <script lang="ts" context="module">
   export type User = { name: string };
 </script>
+
 <script lang="ts">
   import "./header.css";
   import Button from "./Button.svelte";

@@ -1,5 +1,5 @@
 import Header from "./Header.svelte";
-import type { User } from './Header.svelte';
+import type { User } from "./Header.svelte";
 
 export default {
   title: "Example/Header",
@@ -21,7 +21,6 @@ type ArgsType = {
   onLogout: (e: Event) => void;
   onCreateAccount: (e: Event) => void;
 };
-
 
 /* eslint-disable */
 const Template = (args: ArgsType) => ({
