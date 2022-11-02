@@ -1,8 +1,10 @@
+<script lang="ts" context="module">
+  export type ButtonSize = "small" | "medium" | "large";
+</script>
+
 <script lang="ts">
   import "./button.css";
   import { createEventDispatcher } from "svelte";
-
-  export type ButtonSize = "small" | "medium" | "large";
 
   /**
    * Is this the principal call to action on the page?
