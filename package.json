@@ -45,5 +45,11 @@
     "typescript": "^4.8.4",
     "vite": "^3.2.0",
     "vitest": "^0.24.4"
+  },
+  "dependencies": {
+    "@primer/octicons": "^17.8.0",
+    "@primer/primitives": "^7.10.0",
+    "@types/lodash": "^4.14.187",
+    "lodash": "^4.17.21"
   }
 }
