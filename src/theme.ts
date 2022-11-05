@@ -1,7 +1,5 @@
 import __ from "lodash/fp/__";
-import get from "lodash/get";
-import getFP from "lodash/fp/get";
-import partial from "lodash/partial";
+import get from "lodash/fp/get";
 import { fontStack } from "./utils/theme";
 import primitives from "@primer/primitives";
 
@@ -33,11 +31,8 @@ const fontWeights = {
   bold: 600,
 };
 
-export const getFonts: (fontType: string) => string = partial(get, fonts);
+export const getFonts = get(__, fonts);
 
-export const getColor: (value: string) => string = partial(
-  get,
-  primitives.colors.light
-);
+export const getColor = get(__, primitives.colors.light);
 
-export const getFontWeight = getFP(__, fontWeights);
+export const getFontWeight = get(__, fontWeights);
