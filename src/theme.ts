@@ -31,8 +31,12 @@ const fontWeights = {
   bold: 600,
 };
 
+const borderWidth = ["0", "1px"];
+
 export const getFonts = get(__, fonts);
 
 export const getColor = get(__, primitives.colors.light);
 
 export const getFontWeight = get(__, fontWeights);
+
+export const getBorderWidth = get(__, borderWidth);
