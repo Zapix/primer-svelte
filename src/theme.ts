@@ -35,6 +35,13 @@ const borderWidth = ["0", "1px"];
 
 const radii = ["0", "3px", "6px", "100px"];
 
+const sizes = {
+  small: "544px",
+  medium: "768px",
+  large: "1012px",
+  xlarge: "1280px",
+};
+
 export const getFonts = get(__, fonts);
 
 export const getColor = get(__, primitives.colors.light);
@@ -44,3 +51,5 @@ export const getFontWeight = get(__, fontWeights);
 export const getBorderWidth = get(__, borderWidth);
 
 export const getRadii = get(__, radii);
+
+export const getSizes = get(__, sizes);
