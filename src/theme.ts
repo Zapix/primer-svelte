@@ -84,3 +84,5 @@ export const getSize = get(__, sizes);
 export const getFontSize = get(__, fontSizes);
 
 export const getSpace = get(__, space);
+
+export const getLineHeight = get(__, primitives.typography.normal.lineHeight);
