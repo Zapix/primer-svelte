@@ -42,6 +42,17 @@ const sizes = {
   xlarge: "1280px",
 };
 
+const fontSizes = [
+  "12px",
+  "14px",
+  "16px",
+  "20px",
+  "24px",
+  "32px",
+  "40px",
+  "48px",
+];
+
 export const getFonts = get(__, fonts);
 
 export const getColor = get(__, primitives.colors.light);
@@ -52,4 +63,6 @@ export const getBorderWidth = get(__, borderWidth);
 
 export const getRadii = get(__, radii);
 
-export const getSizes = get(__, sizes);
+export const getSize = get(__, sizes);
+
+export const getFontSize = get(__, fontSizes);
