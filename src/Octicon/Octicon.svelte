@@ -10,6 +10,7 @@
   export let iconType: IconName = "alert";
   export let size: SizeName = "small";
   export let tabIndex = -1;
+  export let ariaLabel = "";
 
   let icon: Icon = get(iconType, octicons);
   let iconHeights = getIconHeights(icon);
@@ -23,6 +24,8 @@
 </script>
 
 <svg
+  aria-hidden={ariaLabel ? "false" : "true"}
+  aria-label={ariaLabel}
   data-testid="octicon"
   on:click
   role={focusable ? "button" : ""}

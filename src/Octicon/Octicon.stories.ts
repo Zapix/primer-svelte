@@ -24,10 +24,13 @@ export default {
     },
     tabIndex: { control: "number" },
     onClick: { action: "onClick" },
+    ariaLabel: { control: "text" },
   },
   args: {
     iconType: iconTypes[0],
     size: sizeTypes[0],
+    tabIndex: -1,
+    ariaLabel: "",
   },
 };
 
