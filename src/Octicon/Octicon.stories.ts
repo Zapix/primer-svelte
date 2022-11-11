@@ -22,6 +22,8 @@ export default {
         options: sizeTypes,
       },
     },
+    tabIndex: { control: "number" },
+    onClick: { action: "onClick" },
   },
   args: {
     iconType: iconTypes[0],
@@ -32,11 +34,16 @@ export default {
 type ArgTypes = {
   iconType: octicons.IconName;
   size: SizeName;
+  tabIndex?: number;
+  onClick: (event: Event) => void;
 };
 
 const Template = (args: ArgTypes) => ({
   Component: Octicon,
   props: args,
+  on: {
+    click: args.onClick,
+  },
 });
 
 /* eslint-disable */
