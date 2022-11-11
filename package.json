@@ -50,6 +50,7 @@
     "@primer/octicons": "^17.8.0",
     "@primer/primitives": "^7.10.0",
     "@types/lodash": "^4.14.187",
+    "@types/primer__octicons": "^17.5.0",
     "lodash": "^4.17.21"
   }
 }
