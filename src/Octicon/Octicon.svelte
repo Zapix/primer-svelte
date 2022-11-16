@@ -11,6 +11,7 @@
   export let size: SizeName = "small";
   export let tabIndex = -1;
   export let ariaLabel = "";
+  export let fill = "currentColor";
 
   let icon: Icon = get(iconType, octicons);
   let iconHeights = getIconHeights(icon);
@@ -31,6 +32,7 @@
   role={focusable ? "button" : ""}
   width={naturalWidth}
   height={naturalHeight}
+  {fill}
   tabindex={tabIndex}
   focusable={focusable ? "true" : "false"}
   class:octicon={true}
@@ -44,7 +46,6 @@
   .octicon {
     display: inline-block;
     vertical-align: text-top;
-    fill: currentColor;
     overflow: visible;
   }
 
