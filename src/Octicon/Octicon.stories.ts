@@ -23,6 +23,7 @@ export default {
       },
     },
     fill: { control: "text" },
+    verticalAlign: { control: "text" },
     tabIndex: { control: "number" },
     onClick: { action: "onClick" },
     ariaLabel: { control: "text" },
@@ -31,6 +32,7 @@ export default {
     iconType: iconTypes[0],
     size: sizeTypes[0],
     fill: "black",
+    verticalAlign: "text-top",
     tabIndex: -1,
     ariaLabel: "",
   },
@@ -40,6 +42,7 @@ type ArgTypes = {
   iconType: octicons.IconName;
   size: SizeName;
   fill: string;
+  verticalAlign: string;
   tabIndex?: number;
   onClick: (event: Event) => void;
 };

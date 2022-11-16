@@ -12,6 +12,7 @@
   export let tabIndex = -1;
   export let ariaLabel = "";
   export let fill = "currentColor";
+  export let verticalAlign = "text-top";
 
   let icon: Icon = get(iconType, octicons);
   let iconHeights = getIconHeights(icon);
@@ -38,6 +39,7 @@
   class:octicon={true}
   class:focusable
   class:nofocus={!focusable}
+  style:vertical-align={verticalAlign}
 >
   {@html icon.heights[naturalHeight].path}
 </svg>
@@ -45,7 +47,6 @@
 <style>
   .octicon {
     display: inline-block;
-    vertical-align: text-top;
     overflow: visible;
   }
 
