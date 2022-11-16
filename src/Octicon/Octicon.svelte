@@ -11,6 +11,8 @@
   export let size: SizeName = "small";
   export let tabIndex = -1;
   export let ariaLabel = "";
+  export let fill = "currentColor";
+  export let verticalAlign = "text-top";
 
   let icon: Icon = get(iconType, octicons);
   let iconHeights = getIconHeights(icon);
@@ -31,11 +33,13 @@
   role={focusable ? "button" : ""}
   width={naturalWidth}
   height={naturalHeight}
+  {fill}
   tabindex={tabIndex}
   focusable={focusable ? "true" : "false"}
   class:octicon={true}
   class:focusable
   class:nofocus={!focusable}
+  style:vertical-align={verticalAlign}
 >
   {@html icon.heights[naturalHeight].path}
 </svg>
@@ -43,8 +47,6 @@
 <style>
   .octicon {
     display: inline-block;
-    vertical-align: text-top;
-    fill: currentColor;
     overflow: visible;
   }
 
