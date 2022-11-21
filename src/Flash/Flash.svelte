@@ -1,4 +1,7 @@
 <script lang="ts">
+  import { createEventDispatcher } from "svelte";
+
+  import Octicon from "../Octicon/Octicon.svelte";
   import type { FlashVariant } from "./types";
   import { getStyle } from "./utils";
   import {
@@ -11,8 +14,15 @@
 
   export let title: string;
   export let variant: FlashVariant = "default";
+  export let dismissible = false;
 
   const style = getStyle(variant);
+
+  const dispatch = createEventDispatcher();
+
+  function handleDismissButtonClick() {
+    dispatch("dismiss");
+  }
 </script>
 
 <div
@@ -29,6 +39,18 @@
   <div class="flash-title">
     <span>{title}</span>
   </div>
+
+  {#if dismissible}
+    <div class="flash-dismiss">
+      <Octicon
+        ariaLabel="dismiss"
+        iconType="x"
+        tabIndex={0}
+        fill={style.svg.color}
+        on:click={handleDismissButtonClick}
+      />
+    </div>
+  {/if}
 </div>
 
 <style>
@@ -41,5 +63,9 @@
 
   .flash-title {
     flex-grow: 1;
+  }
+
+  .flash-dismiss {
+    flex-grow: 0;
   }
 </style>

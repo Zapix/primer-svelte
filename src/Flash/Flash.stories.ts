@@ -5,6 +5,7 @@ export default {
   title: "Primer/Flash",
   component: Flash,
   argTypes: {
+    icon: { control: "boolean" },
     title: { control: "text" },
     variant: {
       control: {
@@ -12,21 +13,23 @@ export default {
         options: ["default", "success", "warning", "danger"],
       },
     },
-    onClose: { action: "onClose" },
+    dismissible: { control: "boolean" },
+    onDismiss: { action: "onDismiss" },
   },
 };
 
 type ArgsType = {
   title: string;
   variant: FlashVariant;
-  onClose: (event: Event) => void;
+  dismissible: boolean;
+  onDismiss: (event: Event) => void;
 };
 
 const Template = (args: ArgsType) => ({
   Component: Flash,
   props: args,
   on: {
-    close: args.onClose,
+    dismiss: args.onDismiss,
   },
 });
 
@@ -52,5 +55,12 @@ export const Danger = Template.bind({});
 Danger.args = {
   title: "Danger message",
   variant: "danger",
+};
+
+export const DismissibleDanger = Template.bind({});
+DismissibleDanger.args = {
+  title: "Danger message! Close me!",
+  variant: "danger",
+  dismissible: true,
 };
 /* eslint-enable */
