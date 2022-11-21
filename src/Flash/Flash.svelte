@@ -16,6 +16,7 @@
   export let variant: FlashVariant = "default";
   export let dismissible = false;
   export let full = false;
+  export let banner = false;
 
   const style = getStyle(variant);
 
@@ -29,6 +30,7 @@
 <div
   class="flash"
   class:full
+  class:banner
   style:color={style.color}
   style:border-color={style.borderColor}
   style:background-color={style.backgroundColor}
@@ -75,5 +77,11 @@
     border-radius: 0 !important;
     border-left: none;
     border-right: none;
+  }
+
+  .banner {
+    margin-top: -1px;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
   }
 </style>

@@ -14,6 +14,7 @@ export default {
       },
     },
     full: { control: "boolean" },
+    banner: { control: "boolean" },
     dismissible: { control: "boolean" },
     onDismiss: { action: "onDismiss" },
   },
@@ -23,6 +24,7 @@ type ArgsType = {
   title: string;
   variant: FlashVariant;
   flash: boolean;
+  banner: boolean;
   dismissible: boolean;
   onDismiss: (event: Event) => void;
 };
