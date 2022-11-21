@@ -13,6 +13,7 @@ export default {
         options: ["default", "success", "warning", "danger"],
       },
     },
+    full: { control: "boolean" },
     dismissible: { control: "boolean" },
     onDismiss: { action: "onDismiss" },
   },
@@ -21,6 +22,7 @@ export default {
 type ArgsType = {
   title: string;
   variant: FlashVariant;
+  flash: boolean;
   dismissible: boolean;
   onDismiss: (event: Event) => void;
 };

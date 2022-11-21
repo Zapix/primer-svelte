@@ -15,6 +15,7 @@
   export let title: string;
   export let variant: FlashVariant = "default";
   export let dismissible = false;
+  export let full = false;
 
   const style = getStyle(variant);
 
@@ -27,6 +28,7 @@
 
 <div
   class="flash"
+  class:full
   style:color={style.color}
   style:border-color={style.borderColor}
   style:background-color={style.backgroundColor}
@@ -67,5 +69,11 @@
 
   .flash-dismiss {
     flex-grow: 0;
+  }
+
+  .full {
+    border-radius: 0 !important;
+    border-left: none;
+    border-right: none;
   }
 </style>
