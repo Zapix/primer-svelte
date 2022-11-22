@@ -28,3 +28,5 @@ export type ButtonStyle = {
   shadowActive: string;
   shadowInputFocus: string;
 };
+
+export type ButtonSize = "medium" | "large" | "small";

@@ -7,6 +7,8 @@
     getSpace,
   } from "../theme";
   import { getBtnStyle } from "./utils";
+  import type { ButtonSize } from "./types";
+  export let size: ButtonSize = "medium";
   export let tabIndex = 0;
   export let disabled = false;
 
@@ -18,13 +20,13 @@
   {tabIndex}
   {disabled}
   class="button"
+  class:small={size === "small"}
+  class:medium={size === "medium"}
+  class:large={size === "large"}
   style:font-family={getFonts("normal")}
   style:font-size={getFontSize(1)}
   style:font-weight={getFontWeight("bold")}
-  style:height={"32px"}
   style:border-radius={getRadii(2)}
-  style:padding-left={getSpace(3)}
-  style:padding-right={getSpace(3)}
   style:color={styleVars.text}
   style:bagckground-color={styleVars.bg}
   style:border-color={styleVars.border}
@@ -66,5 +68,26 @@
     color: var(--disabled-text);
     background-color: var(--disabled-bg);
     border-radius: var(--disabled-border);
+  }
+
+  .small {
+    height: 28px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 12px;
+  }
+
+  .medium {
+    height: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: 14px;
+  }
+
+  .large {
+    height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 14px;
   }
 </style>
