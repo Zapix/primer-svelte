@@ -1,4 +1,5 @@
-import get from "lodash/get";
+import _ from "lodash/fp/__";
+import getOr from "lodash/fp/getOr";
 import { getColor } from "../theme";
 import type { FlashStyles, FlashVariant } from "./types";
 
@@ -37,6 +38,4 @@ const styles: Record<FlashVariant, FlashStyles> = {
   },
 };
 
-export function getStyle(variant: FlashVariant): FlashStyles {
-  return get(styles, variant, styles.default);
-}
+export const getStyle = getOr(styles.default, _, styles);

@@ -13,6 +13,7 @@
   } from "../theme";
 
   export let title: string;
+  export let icon = false;
   export let variant: FlashVariant = "default";
   export let dismissible = false;
   export let full = false;
