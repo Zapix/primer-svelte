@@ -1,5 +1,7 @@
 import _ from "lodash/fp/__";
 import getOr from "lodash/fp/getOr";
+import type { IconName } from "@primer/octicons";
+
 import { getColor } from "../theme";
 import type { FlashStyles, FlashVariant } from "./types";
 
@@ -38,4 +40,13 @@ const styles: Record<FlashVariant, FlashStyles> = {
   },
 };
 
+const iconMap: Record<FlashVariant, IconName> = {
+  default: "info",
+  success: "check",
+  warning: "alert",
+  danger: "stop",
+};
+
 export const getStyle = getOr(styles.default, _, styles);
+
+export const getIconType = getOr(iconMap.default, _, iconMap);

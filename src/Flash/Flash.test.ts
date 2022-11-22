@@ -31,3 +31,15 @@ test("dismissable", async () => {
 
   expect(handler).toHaveBeenCalled();
 });
+
+test("render with icon", () => {
+  render(Flash, {
+    title: "hello world",
+    variant: "danger",
+    icon: true,
+  });
+
+  const icon = screen.getByTestId("octicon");
+
+  expect(icon).toBeInTheDocument();
+});

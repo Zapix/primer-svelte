@@ -3,7 +3,7 @@
 
   import Octicon from "../Octicon/Octicon.svelte";
   import type { FlashVariant } from "./types";
-  import { getStyle } from "./utils";
+  import { getIconType, getStyle } from "./utils";
   import {
     getFonts,
     getBorderWidth,
@@ -41,6 +41,15 @@
   style:padding={getSpace(3)}
   style:line-height={getLineHeight("default")}
 >
+  {#if icon}
+    <div class="flash-icon" style:margin-right={getSpace(3)}>
+      <Octicon
+        iconType={getIconType(variant)}
+        fill={style.svg.color}
+        verticalAlign="bottom"
+      />
+    </div>
+  {/if}
   <div class="flash-title">
     <span>{title}</span>
   </div>
@@ -64,6 +73,13 @@
     flex-direction: row;
     border-style: solid;
     box-sizing: border-box;
+  }
+
+  .flash-icon {
+    flex-grow: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .flash-title {
