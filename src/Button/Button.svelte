@@ -1,16 +1,11 @@
 <script lang="ts">
-  import {
-    getFonts,
-    getFontWeight,
-    getFontSize,
-    getRadii,
-    getSpace,
-  } from "../theme";
+  import { getFonts, getFontWeight, getFontSize, getRadii } from "../theme";
   import { getBtnStyle } from "./utils";
   import type { ButtonSize } from "./types";
   export let size: ButtonSize = "medium";
   export let tabIndex = 0;
   export let disabled = false;
+  export let selected = false;
 
   const styleVars = getBtnStyle();
 </script>
@@ -18,8 +13,9 @@
 <button
   type="button"
   {tabIndex}
-  {disabled}
+  disabled={disabled || selected}
   class="button"
+  class:selected
   class:small={size === "small"}
   class:medium={size === "medium"}
   class:large={size === "large"}
@@ -30,6 +26,11 @@
   style:--text={styleVars.text}
   style:--bg={styleVars.bg}
   style:--border={styleVars.border}
+  style:--shadow={styleVars.shadow}
+  style:--selected-text={styleVars.selectedText}
+  style:--selected-bg={styleVars.selectedBg}
+  style:--selected-border={styleVars.selectedBorder}
+  style:--selected-shadow={styleVars.selectedShadow}
   style:--hover-text={styleVars.hoverText}
   style:--hover-bg={styleVars.hoverBg}
   style:--hover-border={styleVars.hoverBorder}
@@ -48,6 +49,8 @@
 
 <style>
   .button {
+    box-sizing: border-box;
+    border-width: 1px;
     font-family: var(--font-family);
     font-size: var(--font-size);
     font-weight: var(--font-weight);
@@ -69,7 +72,7 @@
     outline: none;
   }
 
-  .button:active {
+  .button:active:not(:disabled) {
     background-color: var(--active-bg) !important;
     border-color: var(--active-border) !important;
   }
@@ -78,6 +81,20 @@
     color: var(--disabled-text);
     background-color: var(--disabled-bg);
     border-color: var(--disabled-border);
+  }
+
+  .button.selected {
+    color: var(--selected-text);
+    background: var(--selected-bg);
+    border-color: var(--selected-border);
+    box-shadow: var(--selected-shadow);
+  }
+
+  .button.selected:active {
+    color: var(--selected-text);
+    background: var(--selected-bg);
+    border-color: var(--selected-border);
+    box-shadow: var(--selected-shadow);
   }
 
   .small {

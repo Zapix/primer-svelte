@@ -14,6 +14,7 @@ export default {
       },
     },
     disabled: { control: "boolean" },
+    selected: { control: "boolean" },
     onClick: { action: "onClick" },
   },
 };

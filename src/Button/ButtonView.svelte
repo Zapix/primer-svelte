@@ -4,11 +4,12 @@
   import type { ButtonSize } from "./types";
 
   export let title: string;
+  export let size: ButtonSize = "medium";
   export let tabIndex = -1;
   export let disabled = false;
-  export let size: ButtonSize = "medium";
+  export let selected = false;
 </script>
 
-<Button {tabIndex} {disabled} {size} on:click>
+<Button {tabIndex} {disabled} {size} {selected} on:click>
   {title}
 </Button>
