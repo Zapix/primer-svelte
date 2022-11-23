@@ -23,13 +23,13 @@
   class:small={size === "small"}
   class:medium={size === "medium"}
   class:large={size === "large"}
-  style:font-family={getFonts("normal")}
-  style:font-size={getFontSize(1)}
-  style:font-weight={getFontWeight("bold")}
-  style:border-radius={getRadii(2)}
-  style:color={styleVars.text}
-  style:bagckground-color={styleVars.bg}
-  style:border-color={styleVars.border}
+  style:--font-family={getFonts("normal")}
+  style:--font-size={getFontSize(1)}
+  style:--font-weight={getFontWeight("bold")}
+  style:--border-radius={getRadii(2)}
+  style:--text={styleVars.text}
+  style:--bg={styleVars.bg}
+  style:--border={styleVars.border}
   style:--hover-text={styleVars.hoverText}
   style:--hover-bg={styleVars.hoverBg}
   style:--hover-border={styleVars.hoverBorder}
@@ -47,6 +47,15 @@
 </button>
 
 <style>
+  .button {
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    border-radius: var(--border-radius);
+    color: var(--text);
+    background-color: var(--bg);
+    border-color: var(--border);
+  }
   .button:hover {
     color: var(--hover-text);
     background-color: var(--hover-bg);
@@ -57,17 +66,18 @@
     background-color: var(--focus-bg);
     border-color: var(--focus-border);
     box-shadow: var(--focus-shadow);
+    outline: none;
   }
 
   .button:active {
-    background-color: var(--active-bg);
-    border-color: var(--active-border);
+    background-color: var(--active-bg) !important;
+    border-color: var(--active-border) !important;
   }
 
   .button:disabled {
     color: var(--disabled-text);
     background-color: var(--disabled-bg);
-    border-radius: var(--disabled-border);
+    border-color: var(--disabled-border);
   }
 
   .small {

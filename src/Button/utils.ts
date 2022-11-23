@@ -7,7 +7,7 @@ const buttonStyles = {
     border: getColor(["btn", "border"]),
     shadow: getColor(["btn", "shadow"]),
     insetShadow: getColor(["btn", "insetShadow"]),
-    disabledText: getColor(["btn", "text"]),
+    disabledText: "#959DA5",
     disabledBg: getColor(["btn", "bg"]),
     disabledBorder: getColor(["btn", "border"]),
     hoverText: getColor(["btn", "text"]),
