@@ -104,6 +104,39 @@ const buttonStyles: Record<ButtonVariant, ButtonStyle> = {
     shadowActive: getColor(["btn", "shadowActive"]),
     shadowInputFocus: getColor(["btn", "shadowInputFocus"]),
   },
+  danger: {
+    text: getColor(["btn", "danger", "text"]),
+    bg: getColor(["btn", "bg"]),
+    border: getColor(["btn", "border"]),
+    shadow: getColor(["btn", "shadow"]),
+    insetShadow: getColor(["btn", "insetShadow"]),
+
+    disabledText: getColor(["btn", "danger", "disabledText"]),
+    disabledBg: getColor(["btn", "bg"]),
+    disabledBorder: getColor(["btn", "border"]),
+
+    hoverText: getColor(["btn", "danger", "hoverText"]),
+    hoverBg: getColor(["btn", "danger", "hoverBg"]),
+    hoverBorder: getColor(["btn", "danger", "hoverBorder"]),
+
+    activeBg: getColor(["btn", "danger", "selectedBg"]),
+    activeBorder: getColor(["btn", "danger", "selectedBorder"]),
+
+    selectedText: getColor(["btn", "danger", "selectedText"]),
+    selectedBg: getColor(["btn", "danger", "selectedBg"]),
+    selectedBorder: getColor(["btn", "danger", "selectedBorder"]),
+    selectedShadow: getColor(["btn", "danger", "selectedShadow"]),
+
+    focusText: getColor(["btn", "danger", "text"]),
+    focusBg: getColor(["btn", "focusBg"]),
+    focusBorder: getColor(["btn", "danger", "focusBorder"]),
+    focusShadow: getColor(["btn", "danger", "focusShadow"]),
+
+    icon: getColor(["btn", "danger", "text"]),
+    counterBg: getColor(["btn", "danger", "counterBg"]),
+    shadowActive: getColor(["btn", "shadowActive"]),
+    shadowInputFocus: getColor(["btn", "shadowInputFocus"]),
+  },
 };
 
 export const getBtnStyle = get(_, buttonStyles);

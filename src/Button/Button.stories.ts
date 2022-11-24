@@ -8,7 +8,7 @@ export default {
     title: { control: "text" },
     variant: {
       control: "select",
-      options: ["default", "primary", "outline"],
+      options: ["default", "primary", "outline", "danger"],
     },
     type: {
       control: {
@@ -116,6 +116,30 @@ export const OutlineSmall = Template.bind({});
 OutlineSmall.args = {
   title: "This is outline",
   variant: "outline",
+  type: "button",
+  size: "small",
+};
+
+export const Danger = Template.bind({});
+Danger.args = {
+  title: "This is danger",
+  variant: "danger",
+  type: "button",
+  size: "medium",
+};
+
+export const DangerLarge = Template.bind({});
+DangerLarge.args = {
+  title: "This is danger",
+  variant: "danger",
+  type: "button",
+  size: "large",
+};
+
+export const DangerSmall = Template.bind({});
+DangerSmall.args = {
+  title: "This is dajnger",
+  variant: "danger",
   type: "button",
   size: "small",
 };
