@@ -1,7 +1,8 @@
 <script lang="ts">
   import { getFonts, getFontWeight, getFontSize, getRadii } from "../theme";
   import { getBtnStyle } from "./utils";
-  import type { ButtonSize } from "./types";
+  import type { ButtonSize, ButtonType } from "./types";
+  export let type: ButtonType = "button";
   export let size: ButtonSize = "medium";
   export let tabIndex = 0;
   export let disabled = false;
@@ -11,7 +12,7 @@
 </script>
 
 <button
-  type="button"
+  {type}
   {tabIndex}
   disabled={disabled || selected}
   class="button"

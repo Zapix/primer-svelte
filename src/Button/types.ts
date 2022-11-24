@@ -1,4 +1,6 @@
-export type ButtonType =
+export type ButtonType = "button" | "submit";
+
+export type ButtonVariant =
   | "default"
   | "primary"
   | "outline"
