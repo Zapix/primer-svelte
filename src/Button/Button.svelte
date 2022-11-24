@@ -1,21 +1,23 @@
 <script lang="ts">
   import { getFonts, getFontWeight, getFontSize, getRadii } from "../theme";
   import { getBtnStyle } from "./utils";
-  import type { ButtonSize, ButtonType } from "./types";
+  import type { ButtonSize, ButtonType, ButtonVariant } from "./types";
+
+  export let variant: ButtonVariant = "default";
   export let type: ButtonType = "button";
   export let size: ButtonSize = "medium";
   export let tabIndex = 0;
   export let disabled = false;
   export let selected = false;
 
-  const styleVars = getBtnStyle();
+  const styleVars = getBtnStyle(variant);
 </script>
 
 <button
   {type}
   {tabIndex}
   disabled={disabled || selected}
-  class="button"
+  class:button={true}
   class:selected
   class:small={size === "small"}
   class:medium={size === "medium"}
@@ -40,6 +42,7 @@
   style:--disabled-text={styleVars.disabledText}
   style:--disabled-bg={styleVars.disabledBg}
   style:--disabled-border={styleVars.disabledBorder}
+  style:--focus-text={styleVars.focusText}
   style:--focus-bg={styleVars.focusBg}
   style:--focus-border={styleVars.focusBorder}
   style:--focus-shadow={styleVars.focusShadow}
@@ -59,6 +62,8 @@
     color: var(--text);
     background-color: var(--bg);
     border-color: var(--border);
+
+    cursor: pointer;
   }
   .button:hover {
     color: var(--hover-text);
@@ -67,6 +72,7 @@
   }
 
   .button:focus-visible:not(:disabled) {
+    color: var(--focus-text);
     background-color: var(--focus-bg);
     border-color: var(--focus-border);
     box-shadow: var(--focus-shadow);

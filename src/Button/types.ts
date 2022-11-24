@@ -30,6 +30,7 @@ export type ButtonStyle = {
   disabledBg: string;
   disabledBorder: string;
 
+  focusText: string;
   focusBg: string;
   focusBorder: string;
   focusShadow: string;
