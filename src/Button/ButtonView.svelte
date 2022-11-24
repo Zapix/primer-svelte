@@ -1,5 +1,5 @@
 <script lang="ts">
-  // Component that used in storybook to hide slot in props
+  // Component that used in storybook and in tests to hide slot in props
   import Button from "./Button.svelte";
   import type { ButtonSize } from "./types";
 
