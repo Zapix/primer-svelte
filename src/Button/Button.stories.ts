@@ -8,7 +8,7 @@ export default {
     title: { control: "text" },
     variant: {
       control: "select",
-      options: ["default", "primary", "outline", "danger"],
+      options: ["default", "primary", "outline", "danger", "invisible"],
     },
     type: {
       control: {
@@ -138,8 +138,32 @@ DangerLarge.args = {
 
 export const DangerSmall = Template.bind({});
 DangerSmall.args = {
-  title: "This is dajnger",
+  title: "This is danger",
   variant: "danger",
+  type: "button",
+  size: "small",
+};
+
+export const Invisible = Template.bind({});
+Invisible.args = {
+  title: "This is invisible",
+  variant: "invisible",
+  type: "button",
+  size: "medium",
+};
+
+export const InvisibleLarge = Template.bind({});
+InvisibleLarge.args = {
+  title: "This is invisible",
+  variant: "invisible",
+  type: "button",
+  size: "large",
+};
+
+export const InvisibleSmall = Template.bind({});
+InvisibleSmall.args = {
+  title: "This is invisible",
+  variant: "invisible",
   type: "button",
   size: "small",
 };

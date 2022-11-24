@@ -137,6 +137,39 @@ const buttonStyles: Record<ButtonVariant, ButtonStyle> = {
     shadowActive: getColor(["btn", "shadowActive"]),
     shadowInputFocus: getColor(["btn", "shadowInputFocus"]),
   },
+  invisible: {
+    text: getColor(["accent", "fg"]),
+    bg: "transparent",
+    border: "transparent",
+    shadow: "none",
+    insetShadow: "none",
+
+    disabledText: getColor(["primer", "fg", "disabled"]),
+    disabledBg: "transparent",
+    disabledBorder: "transparent",
+
+    hoverText: getColor(["accent", "fg"]),
+    hoverBg: getColor(["btn", "hoverBg"]),
+    hoverBorder: "transparent",
+
+    activeBg: getColor(["btn", "activeBg"]),
+    activeBorder: "transparent",
+
+    selectedText: getColor(["accent", "fg"]),
+    selectedBg: getColor(["btn", "selectedBg"]),
+    selectedBorder: "transparent",
+    selectedShadow: "none",
+
+    focusText: getColor(["accent", "fg"]),
+    focusBg: getColor(["btn", "hoverBg"]),
+    focusBorder: "transparent",
+    focusShadow: getColor(["btn", "focusShadow"]),
+
+    icon: getColor(["btn", "text"]),
+    counterBg: getColor(["btn", "counterBg"]),
+    shadowActive: "none",
+    shadowInputFocus: "none",
+  },
 };
 
 export const getBtnStyle = get(_, buttonStyles);
