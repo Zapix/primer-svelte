@@ -1,21 +1,23 @@
 <script lang="ts">
   import { getFonts, getFontWeight, getFontSize, getRadii } from "../theme";
   import { getBtnStyle } from "./utils";
-  import type { ButtonSize, ButtonType } from "./types";
+  import type { ButtonSize, ButtonType, ButtonVariant } from "./types";
+
+  export let variant: ButtonVariant = "default";
   export let type: ButtonType = "button";
   export let size: ButtonSize = "medium";
   export let tabIndex = 0;
   export let disabled = false;
   export let selected = false;
 
-  const styleVars = getBtnStyle();
+  const styleVars = getBtnStyle(variant);
 </script>
 
 <button
   {type}
   {tabIndex}
   disabled={disabled || selected}
-  class="button"
+  class:button={true}
   class:selected
   class:small={size === "small"}
   class:medium={size === "medium"}

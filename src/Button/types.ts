@@ -1,11 +1,6 @@
 export type ButtonType = "button" | "submit";
 
-export type ButtonVariant =
-  | "default"
-  | "primary"
-  | "outline"
-  | "danger"
-  | "invisible";
+export type ButtonVariant = "default" | "primary";
 
 export type ButtonStyle = {
   text: string;
