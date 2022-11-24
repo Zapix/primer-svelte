@@ -8,7 +8,7 @@ export default {
     title: { control: "text" },
     variant: {
       control: "select",
-      options: ["default", "primary"],
+      options: ["default", "primary", "outline"],
     },
     type: {
       control: {
@@ -92,6 +92,30 @@ export const PrimarySmall = Template.bind({});
 PrimarySmall.args = {
   title: "This is primary",
   variant: "primary",
+  type: "button",
+  size: "small",
+};
+
+export const Outline = Template.bind({});
+Outline.args = {
+  title: "This is outline",
+  variant: "outline",
+  type: "button",
+  size: "medium",
+};
+
+export const OutlineLarge = Template.bind({});
+OutlineLarge.args = {
+  title: "This is outline",
+  variant: "outline",
+  type: "button",
+  size: "large",
+};
+
+export const OutlineSmall = Template.bind({});
+OutlineSmall.args = {
+  title: "This is outline",
+  variant: "outline",
   type: "button",
   size: "small",
 };

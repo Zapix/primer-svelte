@@ -28,6 +28,7 @@ const buttonStyles: Record<ButtonVariant, ButtonStyle> = {
     selectedBorder: getColor(["btn", "border"]),
     selectedShadow: getColor(["btn", "shadowActive"]),
 
+    focusText: getColor(["btn", "text"]),
     focusBg: getColor(["btn", "focusBg"]),
     focusBorder: getColor(["btn", "focusBorder"]),
     focusShadow: getColor(["btn", "focusShadow"]),
@@ -60,6 +61,7 @@ const buttonStyles: Record<ButtonVariant, ButtonStyle> = {
     selectedBorder: getColor(["btn", "primary", "border"]),
     selectedShadow: getColor(["btn", "primary", "selectedShadow"]),
 
+    focusText: getColor(["btn", "primary", "text"]),
     focusBg: getColor(["btn", "primary", "focusBg"]),
     focusBorder: getColor(["btn", "primary", "focusBorder"]),
     focusShadow: getColor(["btn", "primary", "focusShadow"]),
@@ -68,6 +70,39 @@ const buttonStyles: Record<ButtonVariant, ButtonStyle> = {
     counterBg: getColor(["btn", "primary", "counterBg"]),
     shadowActive: getColor(["btn", "primary", "shadow"]),
     shadowInputFocus: getColor(["btn", "primary", "insetShadow"]),
+  },
+  outline: {
+    text: getColor(["btn", "outline", "text"]),
+    bg: getColor(["btn", "bg"]),
+    border: getColor(["btn", "border"]),
+    shadow: getColor(["btn", "shadow"]),
+    insetShadow: getColor(["btn", "insetShadow"]),
+
+    disabledText: getColor(["btn", "outline", "disabledText"]),
+    disabledBg: getColor(["btn", "outline", "disabledBg"]),
+    disabledBorder: getColor(["btn", "border"]),
+
+    hoverText: getColor(["btn", "outline", "hoverText"]),
+    hoverBg: getColor(["btn", "outline", "hoverBg"]),
+    hoverBorder: getColor(["btn", "outline", "hoverBorder"]),
+
+    activeBg: getColor(["btn", "outline", "selectedBg"]),
+    activeBorder: getColor(["btn", "outline", "selectedBorder"]),
+
+    selectedText: getColor(["btn", "outline", "selectedText"]),
+    selectedBg: getColor(["btn", "outline", "selectedBg"]),
+    selectedBorder: getColor(["btn", "outline", "selectedBorder"]),
+    selectedShadow: getColor(["btn", "outline", "selectedShadow"]),
+
+    focusText: getColor(["btn", "outline", "text"]),
+    focusBg: getColor(["btn", "focusBg"]),
+    focusBorder: getColor(["btn", "outline", "focusBorder"]),
+    focusShadow: getColor(["btn", "outline", "focusShadow"]),
+
+    icon: getColor(["btn", "outline", "text"]),
+    counterBg: getColor(["btn", "outline", "counterBg"]),
+    shadowActive: getColor(["btn", "shadowActive"]),
+    shadowInputFocus: getColor(["btn", "shadowInputFocus"]),
   },
 };
 

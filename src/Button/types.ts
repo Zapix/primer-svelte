@@ -1,6 +1,6 @@
 export type ButtonType = "button" | "submit";
 
-export type ButtonVariant = "default" | "primary";
+export type ButtonVariant = "default" | "primary" | "outline";
 
 export type ButtonStyle = {
   text: string;
@@ -25,6 +25,7 @@ export type ButtonStyle = {
   disabledBg: string;
   disabledBorder: string;
 
+  focusText: string;
   focusBg: string;
   focusBorder: string;
   focusShadow: string;

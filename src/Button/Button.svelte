@@ -42,6 +42,7 @@
   style:--disabled-text={styleVars.disabledText}
   style:--disabled-bg={styleVars.disabledBg}
   style:--disabled-border={styleVars.disabledBorder}
+  style:--focus-text={styleVars.focusText}
   style:--focus-bg={styleVars.focusBg}
   style:--focus-border={styleVars.focusBorder}
   style:--focus-shadow={styleVars.focusShadow}
@@ -61,6 +62,8 @@
     color: var(--text);
     background-color: var(--bg);
     border-color: var(--border);
+
+    cursor: pointer;
   }
   .button:hover {
     color: var(--hover-text);
@@ -69,6 +72,7 @@
   }
 
   .button:focus-visible:not(:disabled) {
+    color: var(--focus-text);
     background-color: var(--focus-bg);
     border-color: var(--focus-border);
     box-shadow: var(--focus-shadow);
