@@ -38,3 +38,13 @@ test("selected button", () => {
   const button = screen.getByText("test");
   expect((button as HTMLButtonElement).disabled).toBeTruthy();
 });
+
+test("render leading icon", () => {
+  render(ButtonView, {
+    title: "test",
+    leadingIcon: "alert",
+  });
+
+  const icon = screen.getByTestId("octicon");
+  expect(icon).toBeInTheDocument();
+});

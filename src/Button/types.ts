@@ -36,6 +36,7 @@ export type ButtonStyle = {
   focusShadow: string;
 
   icon: string;
+  hoverIcon: string;
   counterBg: string;
   shadowActive: string;
   shadowInputFocus: string;
