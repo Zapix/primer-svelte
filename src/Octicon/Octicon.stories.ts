@@ -1,10 +1,8 @@
-import octicons from "@primer/octicons";
-import Octicon from "./Octicon.svelte";
-import { sizeMap } from "./utils";
-import type { SizeName } from "./utils";
+import type { IconName } from "@primer/octicons";
 
-const iconTypes = Array.from(Object.keys(octicons)) as octicons.IconName[];
-const sizeTypes = Array.from(Object.keys(sizeMap)) as SizeName[];
+import Octicon from "./Octicon.svelte";
+import type { SizeName } from "./utils";
+import { iconTypes, sizeTypes } from "./constants";
 
 export default {
   title: "Primer/Octicon",
@@ -39,7 +37,7 @@ export default {
 };
 
 type ArgTypes = {
-  iconType: octicons.IconName;
+  iconType: IconName;
   size: SizeName;
   fill: string;
   verticalAlign: string;

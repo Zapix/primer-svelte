@@ -19,6 +19,7 @@ const buttonStyles: Record<ButtonVariant, ButtonStyle> = {
     hoverText: getColor(["btn", "text"]),
     hoverBg: getColor(["btn", "hoverBg"]),
     hoverBorder: getColor(["btn", "hoverBorder"]),
+    hoverIcon: getColor(["btn", "text"]),
 
     activeBg: getColor(["btn", "activeBg"]),
     activeBorder: getColor(["btn", "activeBorder"]),
@@ -52,6 +53,7 @@ const buttonStyles: Record<ButtonVariant, ButtonStyle> = {
     hoverText: getColor(["btn", "primary", "text"]),
     hoverBg: getColor(["btn", "primary", "hoverBg"]),
     hoverBorder: getColor(["btn", "primary", "hoverBorder"]),
+    hoverIcon: getColor(["btn", "primary", "text"]),
 
     activeBg: getColor(["btn", "primary", "selectedBg"]),
     activeBorder: getColor(["btn", "primary", "border"]),
@@ -85,6 +87,7 @@ const buttonStyles: Record<ButtonVariant, ButtonStyle> = {
     hoverText: getColor(["btn", "outline", "hoverText"]),
     hoverBg: getColor(["btn", "outline", "hoverBg"]),
     hoverBorder: getColor(["btn", "outline", "hoverBorder"]),
+    hoverIcon: getColor(["btn", "outline", "hoverText"]),
 
     activeBg: getColor(["btn", "outline", "selectedBg"]),
     activeBorder: getColor(["btn", "outline", "selectedBorder"]),
@@ -118,6 +121,7 @@ const buttonStyles: Record<ButtonVariant, ButtonStyle> = {
     hoverText: getColor(["btn", "danger", "hoverText"]),
     hoverBg: getColor(["btn", "danger", "hoverBg"]),
     hoverBorder: getColor(["btn", "danger", "hoverBorder"]),
+    hoverIcon: getColor(["btn", "danger", "hoverText"]),
 
     activeBg: getColor(["btn", "danger", "selectedBg"]),
     activeBorder: getColor(["btn", "danger", "selectedBorder"]),
@@ -151,6 +155,7 @@ const buttonStyles: Record<ButtonVariant, ButtonStyle> = {
     hoverText: getColor(["accent", "fg"]),
     hoverBg: getColor(["btn", "hoverBg"]),
     hoverBorder: "transparent",
+    hoverIcon: getColor(["btn", "text"]),
 
     activeBg: getColor(["btn", "activeBg"]),
     activeBorder: "transparent",

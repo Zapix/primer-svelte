@@ -19,6 +19,7 @@
   disabled={disabled || selected}
   class:button={true}
   class:selected
+  class:invisible={variant === "invisible"}
   class:small={size === "small"}
   class:medium={size === "medium"}
   class:large={size === "large"}
@@ -46,9 +47,20 @@
   style:--focus-bg={styleVars.focusBg}
   style:--focus-border={styleVars.focusBorder}
   style:--focus-shadow={styleVars.focusShadow}
+  style:--icon-color={styleVars.icon}
   on:click
 >
+  {#if $$slots.leading}
+    <span data-testid="leading-icon-place" class="icon-place">
+      <slot name="leading" />
+    </span>
+  {/if}
   <slot />
+  {#if $$slots.trailing}
+    <span data-testid="trailing-icon-place" class="icon-place">
+      <slot name="trailing" />
+    </span>
+  {/if}
 </button>
 
 <style>
@@ -65,6 +77,7 @@
 
     cursor: pointer;
   }
+
   .button:hover {
     color: var(--hover-text);
     background-color: var(--hover-bg);
@@ -123,5 +136,9 @@
     padding-left: 20px;
     padding-right: 20px;
     font-size: 14px;
+  }
+
+  .button.invisible .icon-place {
+    color: var(--icon-color);
   }
 </style>
