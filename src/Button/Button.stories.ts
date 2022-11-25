@@ -41,6 +41,7 @@ export default {
         options: iconTypes,
       },
     },
+    counter: { control: "number" },
     onClick: { action: "onClick" },
   },
 };
@@ -54,6 +55,7 @@ type ArgsType = {
   disabled: boolean;
   leadingIcon: null | IconName;
   trailingIcon: null | IconName;
+  counter: number;
   onClick: (event: Event) => void;
 };
 
@@ -118,6 +120,22 @@ WithBothIcons.args = {
   trailingIcon: "triangle-down",
 };
 
+export const WithCounter = Template.bind({});
+WithCounter.args = {
+  title: "This is button",
+  variant: "default",
+  counter: 12,
+};
+
+export const WithCounterAndIcons = Template.bind({});
+WithCounterAndIcons.args = {
+  title: "This is button",
+  variant: "default",
+  leadingIcon: "search",
+  trailingIcon: "triangle-down",
+  counter: 12,
+};
+
 export const Primary = Template.bind({});
 Primary.args = {
   title: "This is primary",
@@ -167,6 +185,24 @@ PrimaryWithBothIcons.args = {
   trailingIcon: "triangle-down",
 };
 
+export const PrimaryWithCounter = Template.bind({});
+PrimaryWithCounter.args = {
+  title: "This is primary",
+  variant: "primary",
+  type: "button",
+  counter: 15,
+};
+
+export const PrimaryWithCounterAndIcons = Template.bind({});
+PrimaryWithCounterAndIcons.args = {
+  title: "This is priamry",
+  variant: "primary",
+  type: "button",
+  leadingIcon: "check",
+  trailingIcon: "triangle-down",
+  counter: 15,
+};
+
 export const Outline = Template.bind({});
 Outline.args = {
   title: "This is outline",
@@ -212,6 +248,24 @@ OutlineWithBothIcons.args = {
   title: "This is outline",
   variant: "outline",
   type: "button",
+  leadingIcon: "search",
+  trailingIcon: "triangle-down",
+};
+
+export const OutlineWithCounter = Template.bind({});
+OutlineWithCounter.args = {
+  title: "This is outline",
+  variant: "outline",
+  type: "button",
+  counter: 15,
+};
+
+export const OutlineWithCounterAndIcons = Template.bind({});
+OutlineWithCounterAndIcons.args = {
+  title: "This is outline",
+  variant: "outline",
+  type: "button",
+  counter: 15,
   leadingIcon: "search",
   trailingIcon: "triangle-down",
 };
@@ -265,6 +319,24 @@ DangerWithBothIcons.args = {
   trailingIcon: "triangle-down",
 };
 
+export const DangerWithCounter = Template.bind({});
+DangerWithBothIcons.args = {
+  title: "This is danger",
+  variant: "danger",
+  type: "button",
+  counter: 3,
+};
+
+export const DangerWithCounterAndIcons = Template.bind({});
+DangerWithCounterAndIcons.args = {
+  title: "This is danger",
+  variant: "danger",
+  type: "button",
+  leadingIcon: "alert",
+  trailingIcon: "triangle-down",
+  counter: 3,
+};
+
 export const Invisible = Template.bind({});
 Invisible.args = {
   title: "This is invisible",
@@ -310,6 +382,24 @@ InvisibleWithBothIcons.args = {
   title: "This is invisible",
   variant: "invisible",
   type: "button",
+  leadingIcon: "search",
+  trailingIcon: "triangle-down",
+};
+
+export const InvisibleWithCounter = Template.bind({});
+InvisibleWithCounter.args = {
+  title: "This is invisible",
+  variant: "invisible",
+  type: "button",
+  counter: 44,
+};
+
+export const InvisibleWithCounterAndIcons = Template.bind({});
+InvisibleWithCounterAndIcons.args = {
+  title: "This is invisible",
+  variant: "invisible",
+  type: "button",
+  counter: 44,
   leadingIcon: "search",
   trailingIcon: "triangle-down",
 };
