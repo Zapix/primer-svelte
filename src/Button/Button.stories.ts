@@ -35,6 +35,12 @@ export default {
         options: iconTypes,
       },
     },
+    trailingIcon: {
+      control: {
+        type: "select",
+        options: iconTypes,
+      },
+    },
     onClick: { action: "onClick" },
   },
 };
@@ -47,6 +53,7 @@ type ArgsType = {
   tabIndex: number;
   disabled: boolean;
   leadingIcon: null | IconName;
+  trailingIcon: null | IconName;
   onClick: (event: Event) => void;
 };
 
@@ -92,6 +99,25 @@ WithLeadingIcon.args = {
   leadingIcon: "search",
 };
 
+export const WithTrailingIcon = Template.bind({});
+WithTrailingIcon.args = {
+  title: "This is button",
+  variant: "default",
+  type: "button",
+  size: "medium",
+  trailingIcon: "triangle-down",
+};
+
+export const WithBothIcons = Template.bind({});
+WithBothIcons.args = {
+  title: "This is button",
+  variant: "default",
+  type: "button",
+  size: "medium",
+  leadingIcon: "search",
+  trailingIcon: "triangle-down",
+};
+
 export const Primary = Template.bind({});
 Primary.args = {
   title: "This is primary",
@@ -122,6 +148,23 @@ PrimaryWithLeadingIcon.args = {
   variant: "primary",
   type: "button",
   leadingIcon: "check",
+};
+
+export const PrimaryWithTrailingIcon = Template.bind({});
+PrimaryWithTrailingIcon.args = {
+  title: "This is primary",
+  variant: "primary",
+  type: "button",
+  trailingIcon: "triangle-down",
+};
+
+export const PrimaryWithBothIcons = Template.bind({});
+PrimaryWithBothIcons.args = {
+  title: "This is primary",
+  variant: "primary",
+  type: "button",
+  leadingIcon: "check",
+  trailingIcon: "triangle-down",
 };
 
 export const Outline = Template.bind({});
@@ -156,6 +199,23 @@ OutlineWithLeadingIcon.args = {
   leadingIcon: "search",
 };
 
+export const OutlineWithTrailingIcon = Template.bind({});
+OutlineWithTrailingIcon.args = {
+  title: "This is outline",
+  variant: "outline",
+  type: "button",
+  trailingIcon: "triangle-down",
+};
+
+export const OutlineWithBothIcons = Template.bind({});
+OutlineWithBothIcons.args = {
+  title: "This is outline",
+  variant: "outline",
+  type: "button",
+  leadingIcon: "search",
+  trailingIcon: "triangle-down",
+};
+
 export const Danger = Template.bind({});
 Danger.args = {
   title: "This is danger",
@@ -188,6 +248,23 @@ DangerWithLeadingIcon.args = {
   leadingIcon: "alert",
 };
 
+export const DangerWithTrailingIcon = Template.bind({});
+DangerWithTrailingIcon.args = {
+  title: "This is danger",
+  variant: "danger",
+  type: "button",
+  trailingIcon: "triangle-down",
+};
+
+export const DangerWithBothIcons = Template.bind({});
+DangerWithBothIcons.args = {
+  title: "This is danger",
+  variant: "danger",
+  type: "button",
+  leadingIcon: "alert",
+  trailingIcon: "triangle-down",
+};
+
 export const Invisible = Template.bind({});
 Invisible.args = {
   title: "This is invisible",
@@ -218,5 +295,22 @@ InvisibleWithLeadingIcon.args = {
   variant: "invisible",
   type: "button",
   leadingIcon: "search",
+};
+
+export const InvisibleWithTrailingIcon = Template.bind({});
+InvisibleWithTrailingIcon.args = {
+  title: "This is invisible",
+  variant: "invisible",
+  type: "button",
+  trailingIcon: "triangle-down",
+};
+
+export const InvisibleWithBothIcons = Template.bind({});
+InvisibleWithBothIcons.args = {
+  title: "This is invisible",
+  variant: "invisible",
+  type: "button",
+  leadingIcon: "search",
+  trailingIcon: "triangle-down",
 };
 /* eslint-enable */

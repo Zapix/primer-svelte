@@ -45,6 +45,16 @@ test("render leading icon", () => {
     leadingIcon: "alert",
   });
 
-  const icon = screen.getByTestId("octicon");
-  expect(icon).toBeInTheDocument();
+  const iconPlace = screen.getByTestId("leading-icon-place");
+  expect(iconPlace).toBeInTheDocument();
+});
+
+test("render trailing icon", () => {
+  render(ButtonView, {
+    title: "test",
+    trailingIcon: "alert",
+  });
+
+  const iconPlace = screen.getByTestId("trailing-icon-place");
+  expect(iconPlace).toBeInTheDocument();
 });

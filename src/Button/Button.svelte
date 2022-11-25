@@ -19,7 +19,7 @@
   disabled={disabled || selected}
   class:button={true}
   class:selected
-  class:invisible={(variant = "invisible")}
+  class:invisible={variant === "invisible"}
   class:small={size === "small"}
   class:medium={size === "medium"}
   class:large={size === "large"}
@@ -51,11 +51,16 @@
   on:click
 >
   {#if $$slots.leading}
-    <span class="icon-place">
+    <span data-testid="leading-icon-place" class="icon-place">
       <slot name="leading" />
     </span>
   {/if}
   <slot />
+  {#if $$slots.trailing}
+    <span data-testid="trailing-icon-place" class="icon-place">
+      <slot name="trailing" />
+    </span>
+  {/if}
 </button>
 
 <style>

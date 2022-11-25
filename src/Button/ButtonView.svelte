@@ -13,9 +13,21 @@
   export let disabled = false;
   export let selected = false;
   export let leadingIcon: null | IconName = null;
+  export let trailingIcon: null | IconName = null;
 </script>
 
-{#if leadingIcon}
+{#if leadingIcon && trailingIcon}
+  <Button {type} {variant} {tabIndex} {disabled} {size} {selected} on:click>
+    <Octicon slot="leading" iconType={leadingIcon} />
+    {title}
+    <Octicon slot="trailing" iconType={trailingIcon} />
+  </Button>
+{:else if trailingIcon}
+  <Button {type} {variant} {tabIndex} {disabled} {size} {selected} on:click>
+    {title}
+    <Octicon slot="trailing" iconType={trailingIcon} />
+  </Button>
+{:else if leadingIcon}
   <Button {type} {variant} {tabIndex} {disabled} {size} {selected} on:click>
     <Octicon slot="leading" iconType={leadingIcon} />
     {title}
