@@ -17,6 +17,7 @@ export type ButtonStyle = {
   hoverText: string;
   hoverBg: string;
   hoverBorder: string;
+  hoverCounterBg: string;
 
   activeBg: string;
   activeBorder: string;

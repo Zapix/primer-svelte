@@ -58,3 +58,13 @@ test("render trailing icon", () => {
   const iconPlace = screen.getByTestId("trailing-icon-place");
   expect(iconPlace).toBeInTheDocument();
 });
+
+test("render counter", () => {
+  render(ButtonView, {
+    title: "test",
+    counter: 12,
+  });
+
+  const counter = screen.getByTestId("counter");
+  expect(counter).toBeInTheDocument();
+});

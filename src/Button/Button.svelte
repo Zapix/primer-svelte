@@ -31,6 +31,9 @@
   style:--bg={styleVars.bg}
   style:--border={styleVars.border}
   style:--shadow={styleVars.shadow}
+  style:--counter-bg={styleVars.counterBg}
+  style:--counter-size={getFontSize(0)}
+  style:--counter-weight={getFontWeight("bold")}
   style:--selected-text={styleVars.selectedText}
   style:--selected-bg={styleVars.selectedBg}
   style:--selected-border={styleVars.selectedBorder}
@@ -38,6 +41,7 @@
   style:--hover-text={styleVars.hoverText}
   style:--hover-bg={styleVars.hoverBg}
   style:--hover-border={styleVars.hoverBorder}
+  style:--hover-counter-bg={styleVars.hoverCounterBg}
   style:--active-bg={styleVars.activeBg}
   style:--active-border={styleVars.activeBorder}
   style:--disabled-text={styleVars.disabledText}
@@ -56,6 +60,11 @@
     </span>
   {/if}
   <slot />
+  {#if $$slots.counter}
+    <span data-testid="counter" class="counter">
+      <slot name="counter" />
+    </span>
+  {/if}
   {#if $$slots.trailing}
     <span data-testid="trailing-icon-place" class="icon-place">
       <slot name="trailing" />
@@ -75,6 +84,7 @@
     background-color: var(--bg);
     border-color: var(--border);
 
+    line-height: 20px;
     cursor: pointer;
   }
 
@@ -140,5 +150,18 @@
 
   .button.invisible .icon-place {
     color: var(--icon-color);
+  }
+
+  .button .counter {
+    background: var(--counter-bg);
+    font-size: var(--counter-size);
+    font-weight: var(--counter-weight);
+    border-radius: 20px;
+    padding: 2px 5px;
+  }
+
+  .button:hover .counter,
+  .button.selected .counter {
+    background: var(--hover-counter-bg);
   }
 </style>
