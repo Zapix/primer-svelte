@@ -16,52 +16,125 @@
   export let leadingIcon: null | IconName = null;
   export let trailingIcon: null | IconName = null;
   export let counter = 0;
+  export let block = false;
 </script>
 
 {#if counter > 0}
   {#if leadingIcon && trailingIcon}
-    <Button {type} {variant} {tabIndex} {disabled} {size} {selected} on:click>
+    <Button
+      {type}
+      {variant}
+      {tabIndex}
+      {disabled}
+      {size}
+      {selected}
+      {block}
+      on:click
+    >
       <Octicon slot="leading" iconType={leadingIcon} />
       {title}
       <Counter slot="counter" value={counter} />
       <Octicon slot="trailing" iconType={trailingIcon} />
     </Button>
   {:else if trailingIcon}
-    <Button {type} {variant} {tabIndex} {disabled} {size} {selected} on:click>
+    <Button
+      {type}
+      {variant}
+      {tabIndex}
+      {disabled}
+      {size}
+      {selected}
+      {block}
+      on:click
+    >
       {title}
       <Counter slot="counter" value={counter} />
       <Octicon slot="trailing" iconType={trailingIcon} />
     </Button>
   {:else if leadingIcon}
-    <Button {type} {variant} {tabIndex} {disabled} {size} {selected} on:click>
+    <Button
+      {type}
+      {variant}
+      {tabIndex}
+      {disabled}
+      {size}
+      {selected}
+      {block}
+      on:click
+    >
       <Octicon slot="leading" iconType={leadingIcon} />
       {title}
       <Counter slot="counter" value={counter} />
     </Button>
   {:else}
-    <Button {type} {variant} {tabIndex} {disabled} {size} {selected} on:click>
+    <Button
+      {type}
+      {variant}
+      {tabIndex}
+      {disabled}
+      {size}
+      {selected}
+      {block}
+      on:click
+    >
       {title}
       <Counter slot="counter" value={counter} />
     </Button>
   {/if}
 {:else if leadingIcon && trailingIcon}
-  <Button {type} {variant} {tabIndex} {disabled} {size} {selected} on:click>
+  <Button
+    {type}
+    {variant}
+    {tabIndex}
+    {disabled}
+    {size}
+    {selected}
+    {block}
+    on:click
+  >
     <Octicon slot="leading" iconType={leadingIcon} />
     {title}
     <Octicon slot="trailing" iconType={trailingIcon} />
   </Button>
 {:else if trailingIcon}
-  <Button {type} {variant} {tabIndex} {disabled} {size} {selected} on:click>
+  <Button
+    {type}
+    {variant}
+    {tabIndex}
+    {disabled}
+    {size}
+    {selected}
+    {block}
+    on:click
+  >
     {title}
     <Octicon slot="trailing" iconType={trailingIcon} />
   </Button>
 {:else if leadingIcon}
-  <Button {type} {variant} {tabIndex} {disabled} {size} {selected} on:click>
+  <Button
+    {type}
+    {variant}
+    {tabIndex}
+    {disabled}
+    {size}
+    {selected}
+    {block}
+    on:click
+  >
     <Octicon slot="leading" iconType={leadingIcon} />
     {title}
   </Button>
 {:else}
-  <Button {type} {variant} {tabIndex} {disabled} {size} {selected} on:click>
+  <Button
+    {type}
+    {variant}
+    {tabIndex}
+    {disabled}
+    {size}
+    {selected}
+    {block}
+    on:click
+  >
     {title}
   </Button>
 {/if}

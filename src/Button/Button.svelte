@@ -10,6 +10,8 @@
   export let disabled = false;
   export let selected = false;
 
+  export let block = false;
+
   const styleVars = getBtnStyle(variant);
 </script>
 
@@ -19,6 +21,7 @@
   disabled={disabled || selected}
   class:button={true}
   class:selected
+  class:block
   class:invisible={variant === "invisible"}
   class:small={size === "small"}
   class:medium={size === "medium"}
@@ -163,5 +166,10 @@
   .button:hover .counter,
   .button.selected .counter {
     background: var(--hover-counter-bg);
+  }
+
+  .button.block {
+    display: block;
+    width: 100%;
   }
 </style>

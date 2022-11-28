@@ -42,6 +42,7 @@ export default {
       },
     },
     counter: { control: "number" },
+    block: { control: "boolean" },
     onClick: { action: "onClick" },
   },
 };
@@ -56,6 +57,7 @@ type ArgsType = {
   leadingIcon: null | IconName;
   trailingIcon: null | IconName;
   counter: number;
+  block: boolean;
   onClick: (event: Event) => void;
 };
 
@@ -74,6 +76,15 @@ Default.args = {
   variant: "default",
   type: "button",
   size: "medium",
+};
+
+export const BlockButton = Template.bind({});
+BlockButton.args = {
+  title: "This is button",
+  variant: "default",
+  type: "button",
+  size: "medium",
+  block: true,
 };
 
 export const Large = Template.bind({});
@@ -144,6 +155,15 @@ Primary.args = {
   size: "medium",
 };
 
+export const BlockPrimary = Template.bind({});
+BlockPrimary.args = {
+  title: "This is primary",
+  variant: "primary",
+  type: "button",
+  size: "medium",
+  block: true,
+};
+
 export const PrimaryLarge = Template.bind({});
 PrimaryLarge.args = {
   title: "This is primary",
@@ -209,6 +229,15 @@ Outline.args = {
   variant: "outline",
   type: "button",
   size: "medium",
+};
+
+export const BlockOutline = Template.bind({});
+BlockOutline.args = {
+  title: "This is outline",
+  variant: "outline",
+  type: "button",
+  size: "medium",
+  block: true,
 };
 
 export const OutlineLarge = Template.bind({});
@@ -278,6 +307,15 @@ Danger.args = {
   size: "medium",
 };
 
+export const BlockDanger = Template.bind({});
+BlockDanger.args = {
+  title: "This is danger",
+  variant: "danger",
+  type: "button",
+  size: "medium",
+  block: true,
+};
+
 export const DangerLarge = Template.bind({});
 DangerLarge.args = {
   title: "This is danger",
@@ -320,7 +358,7 @@ DangerWithBothIcons.args = {
 };
 
 export const DangerWithCounter = Template.bind({});
-DangerWithBothIcons.args = {
+DangerWithCounter.args = {
   title: "This is danger",
   variant: "danger",
   type: "button",
@@ -343,6 +381,15 @@ Invisible.args = {
   variant: "invisible",
   type: "button",
   size: "medium",
+};
+
+export const BlockInvisible = Template.bind({});
+BlockInvisible.args = {
+  title: "This is invisible",
+  variant: "invisible",
+  type: "button",
+  size: "medium",
+  block: true,
 };
 
 export const InvisibleLarge = Template.bind({});
