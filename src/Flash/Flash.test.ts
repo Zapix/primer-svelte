@@ -43,3 +43,22 @@ test("render with icon", () => {
 
   expect(icon).toBeInTheDocument();
 });
+
+test("render button", async () => {
+  const handler = vi.fn();
+
+  const result = render(FlashView, {
+    title: "hello world",
+    variant: "danger",
+    button: true,
+  });
+
+  result.component.$on("buttonClick", handler);
+
+  const button = screen.getByText("Sample Button");
+  expect(button).toBeInTheDocument();
+
+  await fireEvent.click(button);
+
+  expect(handler).toHaveBeenCalled();
+});
