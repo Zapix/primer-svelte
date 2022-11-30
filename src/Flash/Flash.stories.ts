@@ -17,6 +17,8 @@ export default {
     banner: { control: "boolean" },
     dismissible: { control: "boolean" },
     onDismiss: { action: "onDismiss" },
+    button: { action: "boolean" },
+    onButtonClick: { action: "onButtonClick" },
   },
 };
 
@@ -27,6 +29,8 @@ type ArgsType = {
   banner: boolean;
   dismissible: boolean;
   onDismiss: (event: Event) => void;
+  button: boolean;
+  onButtonClick: (event: Event) => void;
 };
 
 const Template = (args: ArgsType) => ({
@@ -34,6 +38,7 @@ const Template = (args: ArgsType) => ({
   props: args,
   on: {
     dismiss: args.onDismiss,
+    buttonClick: args.onButtonClick,
   },
 });
 
@@ -41,6 +46,12 @@ const Template = (args: ArgsType) => ({
 export const Default = Template.bind({});
 Default.args = {
   title: "Default message",
+};
+
+export const DefaultWithButton = Template.bind({});
+DefaultWithButton.args = {
+  title: "Default with button",
+  button: true,
 };
 
 export const Success = Template.bind({});

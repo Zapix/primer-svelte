@@ -38,6 +38,7 @@
   style:border-width={getBorderWidth(1)}
   style:border-radius={getRadii(2)}
   style:padding={getSpace(3)}
+  style:gap={getSpace(3)}
   style:line-height={getLineHeight("default")}
 >
   {#if icon}
@@ -52,6 +53,12 @@
   <div class="flash-title">
     <span><slot /></span>
   </div>
+
+  {#if $$slots.button}
+    <div class="flash-button">
+      <slot name="button" />
+    </div>
+  {/if}
 
   {#if dismissible}
     <div class="flash-dismiss">
@@ -70,6 +77,7 @@
   .flash {
     display: flex;
     flex-direction: row;
+    align-items: center;
     border-style: solid;
     box-sizing: border-box;
   }
@@ -83,6 +91,10 @@
 
   .flash-title {
     flex-grow: 1;
+  }
+
+  .flash-button {
+    flex-grow: 0;
   }
 
   .flash-dismiss {
