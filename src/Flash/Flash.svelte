@@ -12,7 +12,6 @@
     getLineHeight,
   } from "../theme";
 
-  export let title: string;
   export let icon = false;
   export let variant: FlashVariant = "default";
   export let dismissible = false;
@@ -51,7 +50,7 @@
     </div>
   {/if}
   <div class="flash-title">
-    <span>{title}</span>
+    <span><slot /></span>
   </div>
 
   {#if dismissible}

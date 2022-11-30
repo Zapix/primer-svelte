@@ -2,10 +2,10 @@ import "@testing-library/jest-dom";
 import { vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/svelte";
 
-import Flash from "./Flash.svelte";
+import FlashView from "./FlashView.svelte";
 
 test("render default", () => {
-  render(Flash, {
+  render(FlashView, {
     title: "hello world",
     variant: "success",
   });
@@ -18,7 +18,7 @@ test("render default", () => {
 test("dismissable", async () => {
   const handler = vi.fn();
 
-  const result = render(Flash, {
+  const result = render(FlashView, {
     title: "Something goes wrong",
     variant: "warning",
     dismissible: true,
@@ -33,7 +33,7 @@ test("dismissable", async () => {
 });
 
 test("render with icon", () => {
-  render(Flash, {
+  render(FlashView, {
     title: "hello world",
     variant: "danger",
     icon: true,

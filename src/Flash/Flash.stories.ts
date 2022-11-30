@@ -1,9 +1,9 @@
-import Flash from "./Flash.svelte";
+import FlashView from "./FlashView.svelte";
 import type { FlashVariant } from "./types";
 
 export default {
   title: "Primer/Flash",
-  component: Flash,
+  component: FlashView,
   argTypes: {
     icon: { control: "boolean" },
     title: { control: "text" },
@@ -23,14 +23,14 @@ export default {
 type ArgsType = {
   title: string;
   variant: FlashVariant;
-  flash: boolean;
+  full: boolean;
   banner: boolean;
   dismissible: boolean;
   onDismiss: (event: Event) => void;
 };
 
 const Template = (args: ArgsType) => ({
-  Component: Flash,
+  Component: FlashView,
   props: args,
   on: {
     dismiss: args.onDismiss,
