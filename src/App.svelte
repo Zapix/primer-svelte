@@ -8,14 +8,14 @@
   <h2>Flash</h2>
 
   <strong>default</strong>
-  <Flash variant="default" title="Default flash" icon={true} />
+  <Flash variant="default" icon={true}>Default flash</Flash>
 
   <strong>success</strong>
-  <Flash variant="success" title="Success flash" icon={true} />
+  <Flash variant="success" icon={true}>Success flash</Flash>
 
   <strong>warning</strong>
-  <Flash variant="warning" title="Warning flash" icon={true} />
+  <Flash variant="warning" icon={true}>Warning flash</Flash>
 
   <strong>danger</strong>
-  <Flash variant="danger" title="Danger flash" icon={true} />
+  <Flash variant="danger" icon={true}>Danger flash</Flash>
 </main>
