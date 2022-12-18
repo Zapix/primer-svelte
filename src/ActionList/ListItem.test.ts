@@ -8,6 +8,7 @@ test("render default", async () => {
 
   const result = render(ListItemView, {
     title: "test",
+    disabled: false,
   });
 
   result.component.$on("click", handler);
@@ -18,4 +19,22 @@ test("render default", async () => {
 
   await fireEvent.click(item);
   expect(handler).toHaveBeenCalled();
+});
+
+test("render disabled element", async () => {
+  const handler = vi.fn();
+
+  const result = render(ListItemView, {
+    title: "test",
+    disabled: true,
+  });
+
+  result.component.$on("click", handler);
+
+  const item = screen.getByText("test");
+
+  expect(item).toBeInTheDocument();
+
+  await fireEvent.click(item);
+  expect(handler).not.toHaveBeenCalled();
 });

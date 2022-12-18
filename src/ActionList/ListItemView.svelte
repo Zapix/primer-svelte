@@ -3,10 +3,11 @@
   import ListItem from "./ListItem.svelte";
 
   export let title: string;
+  export let disabled: boolean;
 </script>
 
 <ul>
-  <ListItem on:click>
+  <ListItem on:click {disabled}>
     {title}
   </ListItem>
 </ul>

@@ -7,24 +7,43 @@
     getSpace,
   } from "../theme";
   export let tabIndex = 0;
+  export let disabled = false;
 </script>
 
-<li
-  class="list-item"
-  tabindex={tabIndex}
-  role="listitem"
-  style:--fontFamily={getFonts("normal")}
-  style:--fontSize={getFontSize(1)}
-  style:color={getColor(["fg", "default"])}
-  style:--paddingX={getSpace(2)}
-  style:--radius={getRadii(2)}
-  style:--bg={"unset"}
-  style:--hoverBg={getColor(["actionListItem", "default", "hoverBg"])}
->
-  <div class="title" on:click>
-    <slot />
-  </div>
-</li>
+{#if !disabled}
+  <li
+    class="list-item"
+    tabindex={tabIndex}
+    role="listitem"
+    style:--fontFamily={getFonts("normal")}
+    style:--fontSize={getFontSize(1)}
+    style:color={getColor(["fg", "default"])}
+    style:--paddingX={getSpace(2)}
+    style:--radius={getRadii(2)}
+    style:--bg={"unset"}
+    style:--hoverBg={getColor(["actionListItem", "default", "hoverBg"])}
+    on:click
+  >
+    <div class="title">
+      <slot />
+    </div>
+  </li>
+{:else}
+  <li
+    class="list-item disabled"
+    style:--fontFamily={getFonts("normal")}
+    style:--fontSize={getFontSize(1)}
+    style:color={getColor(["fg", "muted"])}
+    style:--paddingX={getSpace(2)}
+    style:--radius={getRadii(2)}
+    style:--bg={"unset"}
+    style:--hoverBg={"none"}
+  >
+    <div class="title">
+      <slot />
+    </div>
+  </li>
+{/if}
 
 <style>
   li.list-item {
@@ -39,6 +58,10 @@
     flex-direction: row;
     align-items: center;
     box-sizing: border-box;
+  }
+
+  li.list-item.disabled {
+    cursor: inherit;
   }
 
   .title {
