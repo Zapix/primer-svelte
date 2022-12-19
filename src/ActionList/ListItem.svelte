@@ -6,8 +6,14 @@
     getFontSize,
     getSpace,
   } from "../theme";
+  import type { ItemVariant } from "./types";
+  import { getStyle } from "./utils";
+
   export let tabIndex = 0;
+  export let variant: ItemVariant = "default";
   export let disabled = false;
+
+  const style = getStyle(variant);
 </script>
 
 {#if !disabled}
@@ -15,13 +21,13 @@
     class="list-item"
     tabindex={tabIndex}
     role="listitem"
-    style:--fontFamily={getFonts("normal")}
-    style:--fontSize={getFontSize(1)}
-    style:color={getColor(["fg", "default"])}
-    style:--paddingX={getSpace(2)}
-    style:--radius={getRadii(2)}
-    style:--bg={"unset"}
-    style:--hoverBg={getColor(["actionListItem", "default", "hoverBg"])}
+    style:--fontFamily={style.fontFamily}
+    style:--fontSize={style.fontSize}
+    style:color={style.fontColor}
+    style:--paddingX={style.paddingX}
+    style:--radius={style.radius}
+    style:--bg={style.bg}
+    style:--hoverBg={style.hoverBg}
     on:click
   >
     <div class="title">
@@ -31,13 +37,13 @@
 {:else}
   <li
     class="list-item disabled"
-    style:--fontFamily={getFonts("normal")}
-    style:--fontSize={getFontSize(1)}
-    style:color={getColor(["fg", "muted"])}
-    style:--paddingX={getSpace(2)}
-    style:--radius={getRadii(2)}
-    style:--bg={"unset"}
-    style:--hoverBg={"none"}
+    style:--fontFamily={style.fontFamily}
+    style:--fontSize={style.fontSize}
+    style:color={style.disabledFontColor}
+    style:--paddingX={style.paddingX}
+    style:--radius={style.radius}
+    style:--bg={style.bg}
+    style:--hoverBg={style.disabledHoverBg}
   >
     <div class="title">
       <slot />
