@@ -1,3 +1,6 @@
+export type SelectionVariant = "none" | "single" | "multiple";
+export type ListAriaRole = "listbox" | "menu";
+
 export type ItemVariant = "default" | "danger";
 
 export type ItemStyles = {
