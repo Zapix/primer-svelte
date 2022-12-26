@@ -5,6 +5,7 @@
   import LiWrapper from "./LiWrapper.svelte";
   import { ACTION_LIST_VARIANT } from "./constants";
   import type { ItemAriaRole, ItemVariant, SelectionVariant } from "./types";
+  import Selection from "./Selection.svelte";
 
   const actionListVariant: SelectionVariant = getContext(ACTION_LIST_VARIANT);
   export let tabIndex = 0;
@@ -21,7 +22,9 @@
       class="selectable"
       style:--selectableWidth={getSpace(3)}
       style:--selectableMargin={getSpace(2)}
-    />
+    >
+      <Selection {selected} selectionVariant={actionListVariant} />
+    </div>
   {/if}
   <div class="title">
     <slot />
@@ -30,6 +33,11 @@
 
 <style>
   .selectable {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 0;
     width: var(--selectableWidth);
     margin-right: var(--selectableMargin);
   }
