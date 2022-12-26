@@ -1,84 +1,48 @@
 <script lang="ts">
-  import {
-    getFonts,
-    getColor,
-    getRadii,
-    getFontSize,
-    getSpace,
-  } from "../theme";
-  import type { ItemVariant } from "./types";
-  import { getStyle } from "./utils";
+  import { getContext } from "svelte";
 
+  import { getSpace } from "../theme";
+  import LiWrapper from "./LiWrapper.svelte";
+  import { ACTION_LIST_VARIANT } from "./constants";
+  import type { ItemAriaRole, ItemVariant, SelectionVariant } from "./types";
+  import Selection from "./Selection.svelte";
+
+  const actionListVariant: SelectionVariant = getContext(ACTION_LIST_VARIANT);
   export let tabIndex = 0;
   export let variant: ItemVariant = "default";
+  export let selected = false;
   export let disabled = false;
-
-  const style = getStyle(variant);
+  export let ariaRole: ItemAriaRole = "listitem";
 </script>
 
-{#if !disabled}
-  <li
-    class="list-item"
-    tabindex={tabIndex}
-    role="listitem"
-    style:--fontFamily={style.fontFamily}
-    style:--fontSize={style.fontSize}
-    style:color={style.fontColor}
-    style:--paddingX={style.paddingX}
-    style:--radius={style.radius}
-    style:--bg={style.bg}
-    style:--hoverBg={style.hoverBg}
-    on:click
-  >
-    <div class="title">
-      <slot />
+<LiWrapper {tabIndex} {variant} {disabled} {ariaRole} on:click>
+  {#if actionListVariant !== "none"}
+    <div
+      data-testid="selectable-place"
+      class="selectable"
+      style:--selectableWidth={getSpace(3)}
+      style:--selectableMargin={getSpace(2)}
+    >
+      <Selection {selected} selectionVariant={actionListVariant} />
     </div>
-  </li>
-{:else}
-  <li
-    class="list-item disabled"
-    style:--fontFamily={style.fontFamily}
-    style:--fontSize={style.fontSize}
-    style:color={style.disabledFontColor}
-    style:--paddingX={style.paddingX}
-    style:--radius={style.radius}
-    style:--bg={style.bg}
-    style:--hoverBg={style.disabledHoverBg}
-  >
-    <div class="title">
-      <slot />
-    </div>
-  </li>
-{/if}
+  {/if}
+  <div class="title">
+    <slot />
+  </div>
+</LiWrapper>
 
 <style>
-  li.list-item {
-    width: 100%;
-    font-family: var(--fontFamily);
-    font-size: var(--fontSize);
-    cursor: pointer;
-    height: 32px;
-    padding: var(--paddingX);
-    border-radius: var(--radius);
+  .selectable {
     display: flex;
     flex-direction: row;
     align-items: center;
-    box-sizing: border-box;
-  }
-
-  li.list-item.disabled {
-    cursor: inherit;
+    justify-content: center;
+    flex-grow: 0;
+    width: var(--selectableWidth);
+    margin-right: var(--selectableMargin);
   }
 
   .title {
     flex-grow: 1;
-  }
-
-  li.list-item:hover {
-    background-color: var(--hoverBg);
-  }
-
-  li.list-item::marker {
-    content: "";
   }
 </style>

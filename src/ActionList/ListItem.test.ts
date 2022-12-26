@@ -9,6 +9,7 @@ test("render default", async () => {
   const result = render(ListItemView, {
     title: "test",
     disabled: false,
+    selected: false,
   });
 
   result.component.$on("click", handler);
@@ -27,6 +28,7 @@ test("render disabled element", async () => {
   const result = render(ListItemView, {
     title: "test",
     disabled: true,
+    selected: false,
   });
 
   result.component.$on("click", handler);
@@ -37,4 +39,16 @@ test("render disabled element", async () => {
 
   await fireEvent.click(item);
   expect(handler).not.toHaveBeenCalled();
+});
+
+test("render selected element", () => {
+  render(ListItemView, {
+    title: "test",
+    disabled: false,
+    selected: true,
+    selectionVariant: "single",
+  });
+
+  const selectableField = screen.getByTestId("selectable-place");
+  expect(selectableField).toBeInTheDocument();
 });
