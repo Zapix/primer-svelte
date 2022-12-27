@@ -1,8 +1,9 @@
 import _ from "lodash/fp/__";
 import get from "lodash/fp/get";
+import getOr from "lodash/fp/getOr";
 
 import { getColor, getFonts, getFontSize, getRadii, getSpace } from "../theme";
-import type { ItemStyles, ItemVariant } from "./types";
+import type { ItemStyles, ItemVariant, ItemSize } from "./types";
 
 const styles: Record<ItemVariant, ItemStyles> = {
   default: {
@@ -29,4 +30,12 @@ const styles: Record<ItemVariant, ItemStyles> = {
   },
 };
 
+const sizes: Record<ItemSize, string> = {
+  small: "32px",
+  medium: "40px",
+  large: "48px",
+};
+
 export const getStyle = get(_, styles);
+
+export const getSize = getOr(sizes.small, _, sizes);

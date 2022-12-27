@@ -1,9 +1,10 @@
 <script lang="ts">
-  import type { ItemAriaRole, ItemVariant } from "./types";
-  import { getStyle } from "./utils";
+  import type { ItemAriaRole, ItemSize, ItemVariant } from "./types";
+  import { getStyle, getSize } from "./utils";
 
   export let tabIndex = 0;
   export let variant: ItemVariant = "default";
+  export let size: ItemSize = "small";
   export let active = false;
   export let disabled = false;
   export let ariaRole: ItemAriaRole = "listitem";
@@ -17,6 +18,7 @@
     class:active
     {tabIndex}
     role={ariaRole}
+    style:--height={getSize(size)}
     style:--fontFamily={style.fontFamily}
     style:--fontSize={style.fontSize}
     style:color={style.fontColor}
@@ -33,6 +35,7 @@
   <li
     class="list-item disabled"
     class:active
+    style:--height={getSize(size)}
     style:--fontFamily={style.fontFamily}
     style:--fontSize={style.fontSize}
     style:color={style.disabledFontColor}
@@ -52,7 +55,7 @@
     font-family: var(--fontFamily);
     font-size: var(--fontSize);
     cursor: pointer;
-    height: 32px;
+    height: var(--height);
     padding: var(--paddingX);
     border-radius: var(--radius);
     display: flex;

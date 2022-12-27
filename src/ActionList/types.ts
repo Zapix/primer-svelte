@@ -3,6 +3,7 @@ export type ListAriaRole = "listbox" | "menu";
 
 export type ItemAriaRole = "listitem" | "menuitem";
 export type ItemVariant = "default" | "danger";
+export type ItemSize = "small" | "medium" | "large";
 
 export type ItemStyles = {
   fontFamily: string;

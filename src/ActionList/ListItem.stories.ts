@@ -1,5 +1,5 @@
 import ListItemView from "./ListItemView.svelte";
-import type { ItemVariant, SelectionVariant } from "./types";
+import type { ItemSize, ItemVariant, SelectionVariant } from "./types";
 
 export default {
   title: "Primer/ActionList/ListItem",
@@ -18,6 +18,12 @@ export default {
         options: ["default", "danger"],
       },
     },
+    size: {
+      control: {
+        type: "select",
+        options: ["small", "medium", "large"],
+      },
+    },
     active: { control: "boolean" },
     disabled: { control: "boolean" },
     selected: { control: "boolean" },
@@ -29,6 +35,7 @@ type ArgsType = {
   title: string;
   selectionVariant: SelectionVariant;
   variant: ItemVariant;
+  size: ItemSize;
   active: boolean;
   disabled: boolean;
   selected: boolean;
