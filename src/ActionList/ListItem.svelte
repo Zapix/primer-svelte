@@ -10,12 +10,13 @@
   const actionListVariant: SelectionVariant = getContext(ACTION_LIST_VARIANT);
   export let tabIndex = 0;
   export let variant: ItemVariant = "default";
+  export let active = false;
   export let selected = false;
   export let disabled = false;
   export let ariaRole: ItemAriaRole = "listitem";
 </script>
 
-<LiWrapper {tabIndex} {variant} {disabled} {ariaRole} on:click>
+<LiWrapper {tabIndex} {variant} {disabled} {ariaRole} {active} on:click>
   {#if actionListVariant !== "none"}
     <div
       data-testid="selectable-place"

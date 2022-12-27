@@ -7,12 +7,13 @@
   export let selectionVariant: SelectionVariant = "none";
   export let title: string;
   export let variant: ItemVariant = "default";
+  export let active: boolean;
   export let disabled: boolean;
   export let selected: boolean;
 </script>
 
 <ActionList variant={selectionVariant}>
-  <ListItem on:click {disabled} {variant} {selected}>
+  <ListItem on:click {active} {disabled} {variant} {selected}>
     {title}
   </ListItem>
 </ActionList>
