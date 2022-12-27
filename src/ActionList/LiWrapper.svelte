@@ -4,6 +4,7 @@
 
   export let tabIndex = 0;
   export let variant: ItemVariant = "default";
+  export let active = false;
   export let disabled = false;
   export let ariaRole: ItemAriaRole = "listitem";
 
@@ -13,6 +14,7 @@
 {#if !disabled}
   <li
     class="list-item"
+    class:active
     {tabIndex}
     role={ariaRole}
     style:--fontFamily={style.fontFamily}
@@ -22,6 +24,7 @@
     style:--radius={style.radius}
     style:--bg={style.bg}
     style:--hoverBg={style.hoverBg}
+    style:--activeBg={style.hoverBg}
     on:click
   >
     <slot />
@@ -29,6 +32,7 @@
 {:else}
   <li
     class="list-item disabled"
+    class:active
     style:--fontFamily={style.fontFamily}
     style:--fontSize={style.fontSize}
     style:color={style.disabledFontColor}
@@ -36,6 +40,7 @@
     style:--radius={style.radius}
     style:--bg={style.bg}
     style:--hoverBg={style.disabledHoverBg}
+    style:--activeBg={style.hoverBg}
   >
     <slot />
   </li>
@@ -62,6 +67,10 @@
 
   li.list-item:hover {
     background-color: var(--hoverBg);
+  }
+
+  li.list-item.active {
+    background-color: var(--activeBg) !important;
   }
 
   li.list-item::marker {

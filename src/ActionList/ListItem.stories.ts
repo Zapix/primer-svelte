@@ -18,6 +18,7 @@ export default {
         options: ["default", "danger"],
       },
     },
+    active: { control: "boolean" },
     disabled: { control: "boolean" },
     selected: { control: "boolean" },
     onClick: { action: "onClick" },
@@ -28,6 +29,7 @@ type ArgsType = {
   title: string;
   selectionVariant: SelectionVariant;
   variant: ItemVariant;
+  active: boolean;
   disabled: boolean;
   selected: boolean;
   onClick: (event: Event) => void;
@@ -47,12 +49,22 @@ Default.args = {
   title: "Action list item",
   selectionVariant: "none",
   disabled: false,
+  active: false,
+};
+
+export const Active = Template.bind({});
+Active.args = {
+  title: "Action list item",
+  selectionVariant: "none",
+  active: true,
+  disabled: false,
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   title: "Action list item",
   selectionVariant: "none",
+  active: false,
   disabled: true,
 };
 
@@ -61,12 +73,14 @@ Danger.args = {
   title: "Action list item",
   selectionVariant: "none",
   variant: "danger",
+  active: false,
 };
 
 export const Selectable = Template.bind({});
 Selectable.args = {
   title: "Action list item",
   selectionVariant: "single",
+  active: false,
   disabled: false,
   selected: true,
 };

@@ -10,6 +10,7 @@ test("render default", async () => {
     title: "test",
     disabled: false,
     selected: false,
+    active: false,
   });
 
   result.component.$on("click", handler);
@@ -29,6 +30,7 @@ test("render disabled element", async () => {
     title: "test",
     disabled: true,
     selected: false,
+    active: false,
   });
 
   result.component.$on("click", handler);
@@ -47,6 +49,7 @@ test("render selected element", () => {
     disabled: false,
     selected: true,
     selectionVariant: "single",
+    active: false,
   });
 
   const selectableField = screen.getByTestId("selectable-place");
