@@ -33,6 +33,11 @@
       <Selection {selected} selectionVariant={actionListVariant} />
     </div>
   {/if}
+  {#if $$slots.lead}
+    <div data-testid="lead-place" class="lead" style:--leadMargin={getSpace(2)}>
+      <slot name="lead" />
+    </div>
+  {/if}
   <div class="title">
     <slot />
   </div>
@@ -47,6 +52,15 @@
     flex-grow: 0;
     width: var(--selectableWidth);
     margin-right: var(--selectableMargin);
+  }
+
+  .lead {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 0;
+    margin-right: var(--leadMargin);
   }
 
   .title {

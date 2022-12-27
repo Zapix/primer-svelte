@@ -1,5 +1,7 @@
 import ListItemView from "./ListItemView.svelte";
 import type { ItemSize, ItemVariant, SelectionVariant } from "./types";
+import { iconTypes } from "../Octicon/constants";
+import type { IconName } from "@primer/octicons";
 
 export default {
   title: "Primer/ActionList/ListItem",
@@ -28,6 +30,12 @@ export default {
     disabled: { control: "boolean" },
     selected: { control: "boolean" },
     onClick: { action: "onClick" },
+    leadingIcon: {
+      control: {
+        type: "select",
+        options: [undefined, ...iconTypes],
+      },
+    },
   },
 };
 
@@ -39,6 +47,7 @@ type ArgsType = {
   active: boolean;
   disabled: boolean;
   selected: boolean;
+  leadingIcon: IconName | undefined;
   onClick: (event: Event) => void;
 };
 
