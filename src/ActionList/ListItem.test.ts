@@ -55,3 +55,16 @@ test("render selected element", () => {
   const selectableField = screen.getByTestId("selectable-place");
   expect(selectableField).toBeInTheDocument();
 });
+
+test("render leading icon element", () => {
+  render(ListItemView, {
+    title: "test",
+    disabled: false,
+    selected: false,
+    active: false,
+    leadingIcon: "alert",
+  });
+
+  const leadPlace = screen.getByTestId("lead-place");
+  expect(leadPlace).toBeInTheDocument();
+});
