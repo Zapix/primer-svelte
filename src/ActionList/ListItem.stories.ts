@@ -100,4 +100,13 @@ Selectable.args = {
   disabled: false,
   selected: true,
 };
+
+export const LeadingIcon = Template.bind({});
+LeadingIcon.args = {
+  title: "Action list item",
+  selectionVariant: "none",
+  disabled: false,
+  active: false,
+  leadingIcon: "arrow-right",
+};
 /* eslint-enable */
