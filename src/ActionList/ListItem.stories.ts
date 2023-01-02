@@ -8,6 +8,7 @@ export default {
   component: ListItemView,
   argTypes: {
     title: { control: "text" },
+    description: { control: "text" },
     selectionVariant: {
       control: {
         type: "select",
@@ -47,6 +48,7 @@ export default {
 
 type ArgsType = {
   title: string;
+  description: string;
   selectionVariant: SelectionVariant;
   variant: ItemVariant;
   size: ItemSize;
@@ -134,5 +136,11 @@ LeadingAndTrailingIcon.args = {
   active: false,
   leadingIcon: "gear",
   trailingIcon: "arrow-right",
+};
+
+export const WithDescription = Template.bind({});
+WithDescription.args = {
+  title: "Action list item",
+  inlineDescription: "Hello world! Make code not war",
 };
 /* eslint-enable */

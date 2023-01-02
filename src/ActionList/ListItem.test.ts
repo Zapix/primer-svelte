@@ -81,3 +81,16 @@ test("render trailing icon element", () => {
   const trailPlace = screen.getByTestId("trail-place");
   expect(trailPlace).toBeInTheDocument();
 });
+
+test("render inline description", () => {
+  render(ListItemView, {
+    title: "test",
+    inlineDescription: "description",
+    disabled: false,
+    selected: false,
+    active: false,
+  });
+
+  const inlineDescriptionPlace = screen.getByTestId("inline-description");
+  expect(inlineDescriptionPlace).toBeInTheDocument();
+});

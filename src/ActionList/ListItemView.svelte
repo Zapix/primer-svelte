@@ -9,6 +9,7 @@
 
   export let selectionVariant: SelectionVariant = "none";
   export let title: string;
+  export let inlineDescription = "";
   export let variant: ItemVariant = "default";
   export let size: ItemSize = "small";
   export let active: boolean;
@@ -19,7 +20,41 @@
 </script>
 
 <ActionList variant={selectionVariant}>
-  {#if leadingIcon && trailingIcon}
+  {#if inlineDescription}
+    {#if leadingIcon && trailingIcon}
+      <ListItem on:click {active} {size} {disabled} {variant} {selected}>
+        <Octicon slot="lead" iconType={leadingIcon} />
+        {title}
+        <svelte:fragment slot="inline-description">
+          {inlineDescription}
+        </svelte:fragment>
+        <Octicon slot="trail" iconType={trailingIcon} />
+      </ListItem>
+    {:else if trailingIcon}
+      <ListItem on:click {active} {size} {disabled} {variant} {selected}>
+        {title}
+        <svelte:fragment slot="inline-description">
+          {inlineDescription}
+        </svelte:fragment>
+        <Octicon slot="trail" iconType={trailingIcon} />
+      </ListItem>
+    {:else if leadingIcon}
+      <ListItem on:click {active} {size} {disabled} {variant} {selected}>
+        <Octicon slot="lead" iconType={leadingIcon} />
+        {title}
+        <svelte:fragment slot="inline-description">
+          {inlineDescription}
+        </svelte:fragment>
+      </ListItem>
+    {:else}
+      <ListItem on:click {active} {size} {disabled} {variant} {selected}>
+        {title}
+        <svelte:fragment slot="inline-description">
+          {inlineDescription}
+        </svelte:fragment>
+      </ListItem>
+    {/if}
+  {:else if leadingIcon && trailingIcon}
     <ListItem on:click {active} {size} {disabled} {variant} {selected}>
       <Octicon slot="lead" iconType={leadingIcon} />
       {title}
