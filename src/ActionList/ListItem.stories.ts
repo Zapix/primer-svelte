@@ -36,6 +36,12 @@ export default {
         options: [undefined, ...iconTypes],
       },
     },
+    trailingIcon: {
+      control: {
+        type: "select",
+        options: [undefined, ...iconTypes],
+      },
+    },
   },
 };
 
@@ -48,6 +54,7 @@ type ArgsType = {
   disabled: boolean;
   selected: boolean;
   leadingIcon: IconName | undefined;
+  trailingIcon: IconName | undefined;
   onClick: (event: Event) => void;
 };
 
@@ -108,5 +115,24 @@ LeadingIcon.args = {
   disabled: false,
   active: false,
   leadingIcon: "arrow-right",
+};
+
+export const TrailingIcon = Template.bind({});
+TrailingIcon.args = {
+  title: "Action list item",
+  selectionVariant: "none",
+  disabled: false,
+  active: false,
+  trailingIcon: "arrow-right",
+};
+
+export const LeadingAndTrailingIcon = Template.bind({});
+LeadingAndTrailingIcon.args = {
+  title: "Action list item",
+  selectionVariant: "none",
+  disabled: false,
+  active: false,
+  leadingIcon: "gear",
+  trailingIcon: "arrow-right",
 };
 /* eslint-enable */

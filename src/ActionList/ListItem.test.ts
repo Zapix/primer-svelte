@@ -68,3 +68,16 @@ test("render leading icon element", () => {
   const leadPlace = screen.getByTestId("lead-place");
   expect(leadPlace).toBeInTheDocument();
 });
+
+test("render trailing icon element", () => {
+  render(ListItemView, {
+    title: "test",
+    disabled: false,
+    selected: false,
+    active: false,
+    trailingIcon: "arrow-right",
+  });
+
+  const trailPlace = screen.getByTestId("trail-place");
+  expect(trailPlace).toBeInTheDocument();
+});
