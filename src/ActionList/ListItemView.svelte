@@ -15,10 +15,22 @@
   export let disabled: boolean;
   export let selected: boolean;
   export let leadingIcon: IconName | undefined = undefined;
+  export let trailingIcon: IconName | undefined = undefined;
 </script>
 
 <ActionList variant={selectionVariant}>
-  {#if leadingIcon}
+  {#if leadingIcon && trailingIcon}
+    <ListItem on:click {active} {size} {disabled} {variant} {selected}>
+      <Octicon slot="lead" iconType={leadingIcon} />
+      {title}
+      <Octicon slot="trail" iconType={trailingIcon} />
+    </ListItem>
+  {:else if trailingIcon}
+    <ListItem on:click {active} {size} {disabled} {variant} {selected}>
+      {title}
+      <Octicon slot="trail" iconType={trailingIcon} />
+    </ListItem>
+  {:else if leadingIcon}
     <ListItem on:click {active} {size} {disabled} {variant} {selected}>
       <Octicon slot="lead" iconType={leadingIcon} />
       {title}

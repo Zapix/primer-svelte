@@ -41,6 +41,15 @@
   <div class="title">
     <slot />
   </div>
+  {#if $$slots.trail}
+    <div
+      data-testid="trail-place"
+      class="trail"
+      style:--trailMargin={getSpace(2)}
+    >
+      <slot name="trail" />
+    </div>
+  {/if}
 </LiWrapper>
 
 <style>
@@ -65,5 +74,16 @@
 
   .title {
     flex-grow: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .trail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 0;
+    margin-left: var(--trailMargin);
   }
 </style>
