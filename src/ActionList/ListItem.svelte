@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte";
 
-  import { getSpace } from "../theme";
+  import { getSpace, getColor, getFontSize } from "../theme";
   import LiWrapper from "./LiWrapper.svelte";
   import { ACTION_LIST_VARIANT } from "./constants";
   import type {
@@ -38,8 +38,21 @@
       <slot name="lead" />
     </div>
   {/if}
-  <div class="title">
-    <slot />
+  <div class="main">
+    <div class="title">
+      <slot />
+    </div>
+    {#if $$slots["inline-description"]}
+      <div
+        data-testid="inline-description"
+        class="inline-description"
+        style:--fontSize={getFontSize(0)}
+        style:--fontColor={getColor(["fg", "muted"])}
+        style:--inlineMargin={getSpace(2)}
+      >
+        <slot name="inline-description" />
+      </div>
+    {/if}
   </div>
   {#if $$slots.trail}
     <div
@@ -72,10 +85,24 @@
     margin-right: var(--leadMargin);
   }
 
-  .title {
+  .main {
+    display: flex;
+    flex-direction: row;
     flex-grow: 1;
+    overflow-x: hidden;
+  }
+
+  .title {
     white-space: nowrap;
     text-overflow: ellipsis;
+    align-self: flex-end;
+  }
+
+  .inline-description {
+    align-self: flex-end;
+    margin-left: var(--inlineMargin);
+    font-size: var(--fontSize);
+    color: var(--fontColor);
   }
 
   .trail {
