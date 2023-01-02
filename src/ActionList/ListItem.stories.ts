@@ -8,7 +8,7 @@ export default {
   component: ListItemView,
   argTypes: {
     title: { control: "text" },
-    description: { control: "text" },
+    inlineDescription: { control: "text" },
     selectionVariant: {
       control: {
         type: "select",
@@ -48,7 +48,7 @@ export default {
 
 type ArgsType = {
   title: string;
-  description: string;
+  inlineDescription: string;
   selectionVariant: SelectionVariant;
   variant: ItemVariant;
   size: ItemSize;
