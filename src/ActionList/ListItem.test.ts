@@ -94,3 +94,16 @@ test("render inline description", () => {
   const inlineDescriptionPlace = screen.getByTestId("inline-description");
   expect(inlineDescriptionPlace).toBeInTheDocument();
 });
+
+test("render block description", () => {
+  render(ListItemView, {
+    title: "test",
+    blockDescription: "description",
+    disabled: false,
+    selected: false,
+    active: false,
+  });
+
+  const blockDescriptionPlace = screen.getByTestId("block-description");
+  expect(blockDescriptionPlace).toBeInTheDocument();
+});
