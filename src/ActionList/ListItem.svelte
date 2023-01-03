@@ -39,18 +39,31 @@
     </div>
   {/if}
   <div class="main">
-    <div class="title">
-      <slot />
+    <div class="main-row">
+      <div class="title">
+        <slot />
+      </div>
+      {#if $$slots["inline-description"]}
+        <div
+          data-testid="inline-description"
+          class="inline-description"
+          style:--fontSize={getFontSize(0)}
+          style:--fontColor={getColor(["fg", "muted"])}
+          style:--inlineMargin={getSpace(2)}
+        >
+          <slot name="inline-description" />
+        </div>
+      {/if}
     </div>
-    {#if $$slots["inline-description"]}
+    {#if $$slots["block-description"]}
       <div
-        data-testid="inline-description"
-        class="inline-description"
+        data-testid="block-description"
+        class="description-row"
         style:--fontSize={getFontSize(0)}
         style:--fontColor={getColor(["fg", "muted"])}
         style:--inlineMargin={getSpace(2)}
       >
-        <slot name="inline-description" />
+        <slot name="block-description" />
       </div>
     {/if}
   </div>
@@ -87,8 +100,13 @@
 
   .main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-grow: 1;
+  }
+
+  .main-row {
+    display: flex;
+    flex-direction: row;
     overflow-x: hidden;
   }
 
@@ -101,6 +119,11 @@
   .inline-description {
     align-self: flex-end;
     margin-left: var(--inlineMargin);
+    font-size: var(--fontSize);
+    color: var(--fontColor);
+  }
+
+  .description-row {
     font-size: var(--fontSize);
     color: var(--fontColor);
   }

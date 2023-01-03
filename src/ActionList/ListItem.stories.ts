@@ -9,6 +9,7 @@ export default {
   argTypes: {
     title: { control: "text" },
     inlineDescription: { control: "text" },
+    blockDescription: { control: "text" },
     selectionVariant: {
       control: {
         type: "select",
@@ -138,9 +139,15 @@ LeadingAndTrailingIcon.args = {
   trailingIcon: "arrow-right",
 };
 
-export const WithDescription = Template.bind({});
-WithDescription.args = {
+export const WithInlineDescription = Template.bind({});
+WithInlineDescription.args = {
   title: "Action list item",
   inlineDescription: "Hello world! Make code not war",
+};
+
+export const WithBlockDescription = Template.bind({});
+WithBlockDescription.args = {
+  title: "Action list item",
+  blockDescription: "Hello world! Make code not war",
 };
 /* eslint-enable */

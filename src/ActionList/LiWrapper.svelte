@@ -55,12 +55,12 @@
     font-family: var(--fontFamily);
     font-size: var(--fontSize);
     cursor: pointer;
-    height: var(--height);
+    min-height: var(--height);
     padding: var(--paddingX);
     border-radius: var(--radius);
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     box-sizing: border-box;
   }
 
