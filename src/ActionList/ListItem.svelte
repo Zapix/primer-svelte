@@ -19,6 +19,7 @@
   export let active = false;
   export let selected = false;
   export let disabled = false;
+  export let divider = false;
   export let ariaRole: ItemAriaRole = "listitem";
 </script>
 
@@ -38,7 +39,11 @@
       <slot name="lead" />
     </div>
   {/if}
-  <div class="main">
+  <div
+    class="main"
+    class:divider
+    style:--dividerColor={getColor(["actionListItem", "inlineDivider"])}
+  >
     <div class="main-row">
       <div class="title">
         <slot />
@@ -102,6 +107,17 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    position: relative;
+  }
+
+  .divider::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: -7px;
+    border-top: 1px solid;
+    border-color: var(--dividerColor);
   }
 
   .main-row {

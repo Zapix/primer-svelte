@@ -31,6 +31,7 @@ export default {
     active: { control: "boolean" },
     disabled: { control: "boolean" },
     selected: { control: "boolean" },
+    divider: { control: "boolean" },
     onClick: { action: "onClick" },
     leadingIcon: {
       control: {
@@ -84,6 +85,15 @@ Active.args = {
   selectionVariant: "none",
   active: true,
   disabled: false,
+};
+
+export const Divider = Template.bind({});
+Divider.args = {
+  title: "Action list item",
+  selectionVariant: "none",
+  active: false,
+  disabled: false,
+  divider: true,
 };
 
 export const Disabled = Template.bind({});

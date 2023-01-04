@@ -11,6 +11,7 @@ test("render default", async () => {
     disabled: false,
     selected: false,
     active: false,
+    divider: false,
   });
 
   result.component.$on("click", handler);
@@ -31,6 +32,7 @@ test("render disabled element", async () => {
     disabled: true,
     selected: false,
     active: false,
+    divider: false,
   });
 
   result.component.$on("click", handler);
@@ -50,6 +52,7 @@ test("render selected element", () => {
     selected: true,
     selectionVariant: "single",
     active: false,
+    divider: false,
   });
 
   const selectableField = screen.getByTestId("selectable-place");
@@ -63,6 +66,7 @@ test("render leading icon element", () => {
     selected: false,
     active: false,
     leadingIcon: "alert",
+    divider: false,
   });
 
   const leadPlace = screen.getByTestId("lead-place");
@@ -76,6 +80,7 @@ test("render trailing icon element", () => {
     selected: false,
     active: false,
     trailingIcon: "arrow-right",
+    divider: false,
   });
 
   const trailPlace = screen.getByTestId("trail-place");
@@ -89,6 +94,7 @@ test("render inline description", () => {
     disabled: false,
     selected: false,
     active: false,
+    divider: false,
   });
 
   const inlineDescriptionPlace = screen.getByTestId("inline-description");
@@ -102,6 +108,7 @@ test("render block description", () => {
     disabled: false,
     selected: false,
     active: false,
+    divider: false,
   });
 
   const blockDescriptionPlace = screen.getByTestId("block-description");
