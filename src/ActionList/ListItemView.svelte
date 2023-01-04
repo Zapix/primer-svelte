@@ -16,6 +16,7 @@
   export let active: boolean;
   export let disabled: boolean;
   export let selected: boolean;
+  export let divider: boolean;
   export let leadingIcon: IconName | undefined = undefined;
   export let trailingIcon: IconName | undefined = undefined;
 </script>
@@ -23,7 +24,15 @@
 <ActionList variant={selectionVariant}>
   {#if inlineDescription && blockDescription}
     {#if leadingIcon && trailingIcon}
-      <ListItem on:click {active} {size} {disabled} {variant} {selected}>
+      <ListItem
+        on:click
+        {active}
+        {size}
+        {disabled}
+        {variant}
+        {selected}
+        {divider}
+      >
         <Octicon slot="lead" iconType={leadingIcon} />
         {title}
         <svelte:fragment slot="inline-description">
@@ -35,7 +44,15 @@
         <Octicon slot="trail" iconType={trailingIcon} />
       </ListItem>
     {:else if trailingIcon}
-      <ListItem on:click {active} {size} {disabled} {variant} {selected}>
+      <ListItem
+        on:click
+        {active}
+        {size}
+        {disabled}
+        {variant}
+        {selected}
+        {divider}
+      >
         {title}
         <svelte:fragment slot="inline-description">
           {inlineDescription}
@@ -46,7 +63,15 @@
         <Octicon slot="trail" iconType={trailingIcon} />
       </ListItem>
     {:else if leadingIcon}
-      <ListItem on:click {active} {size} {disabled} {variant} {selected}>
+      <ListItem
+        on:click
+        {active}
+        {size}
+        {disabled}
+        {variant}
+        {selected}
+        {divider}
+      >
         <Octicon slot="lead" iconType={leadingIcon} />
         {title}
         <svelte:fragment slot="inline-description">
@@ -57,7 +82,15 @@
         </svelte:fragment>
       </ListItem>
     {:else}
-      <ListItem on:click {active} {size} {disabled} {variant} {selected}>
+      <ListItem
+        on:click
+        {active}
+        {size}
+        {disabled}
+        {variant}
+        {selected}
+        {divider}
+      >
         {title}
         <svelte:fragment slot="inline-description">
           {inlineDescription}
@@ -69,7 +102,15 @@
     {/if}
   {:else if inlineDescription}
     {#if leadingIcon && trailingIcon}
-      <ListItem on:click {active} {size} {disabled} {variant} {selected}>
+      <ListItem
+        on:click
+        {active}
+        {size}
+        {disabled}
+        {variant}
+        {selected}
+        {divider}
+      >
         <Octicon slot="lead" iconType={leadingIcon} />
         {title}
         <svelte:fragment slot="inline-description">
@@ -78,7 +119,15 @@
         <Octicon slot="trail" iconType={trailingIcon} />
       </ListItem>
     {:else if trailingIcon}
-      <ListItem on:click {active} {size} {disabled} {variant} {selected}>
+      <ListItem
+        on:click
+        {active}
+        {size}
+        {disabled}
+        {variant}
+        {selected}
+        {divider}
+      >
         {title}
         <svelte:fragment slot="inline-description">
           {inlineDescription}
@@ -86,7 +135,15 @@
         <Octicon slot="trail" iconType={trailingIcon} />
       </ListItem>
     {:else if leadingIcon}
-      <ListItem on:click {active} {size} {disabled} {variant} {selected}>
+      <ListItem
+        on:click
+        {active}
+        {size}
+        {disabled}
+        {variant}
+        {selected}
+        {divider}
+      >
         <Octicon slot="lead" iconType={leadingIcon} />
         {title}
         <svelte:fragment slot="inline-description">
@@ -94,7 +151,15 @@
         </svelte:fragment>
       </ListItem>
     {:else}
-      <ListItem on:click {active} {size} {disabled} {variant} {selected}>
+      <ListItem
+        on:click
+        {active}
+        {size}
+        {disabled}
+        {variant}
+        {selected}
+        {divider}
+      >
         {title}
         <svelte:fragment slot="inline-description">
           {inlineDescription}
@@ -103,7 +168,15 @@
     {/if}
   {:else if blockDescription}
     {#if leadingIcon && trailingIcon}
-      <ListItem on:click {active} {size} {disabled} {variant} {selected}>
+      <ListItem
+        on:click
+        {active}
+        {size}
+        {disabled}
+        {variant}
+        {selected}
+        {divider}
+      >
         <Octicon slot="lead" iconType={leadingIcon} />
         {title}
         <svelte:fragment slot="block-description">
@@ -112,7 +185,15 @@
         <Octicon slot="trail" iconType={trailingIcon} />
       </ListItem>
     {:else if trailingIcon}
-      <ListItem on:click {active} {size} {disabled} {variant} {selected}>
+      <ListItem
+        on:click
+        {active}
+        {size}
+        {disabled}
+        {variant}
+        {selected}
+        {divider}
+      >
         {title}
         <svelte:fragment slot="block-description">
           {blockDescription}
@@ -120,7 +201,15 @@
         <Octicon slot="trail" iconType={trailingIcon} />
       </ListItem>
     {:else if leadingIcon}
-      <ListItem on:click {active} {size} {disabled} {variant} {selected}>
+      <ListItem
+        on:click
+        {active}
+        {size}
+        {disabled}
+        {variant}
+        {selected}
+        {divider}
+      >
         <Octicon slot="lead" iconType={leadingIcon} />
         {title}
         <svelte:fragment slot="block-description">
@@ -128,7 +217,15 @@
         </svelte:fragment>
       </ListItem>
     {:else}
-      <ListItem on:click {active} {size} {disabled} {variant} {selected}>
+      <ListItem
+        on:click
+        {active}
+        {size}
+        {disabled}
+        {variant}
+        {selected}
+        {divider}
+      >
         {title}
         <svelte:fragment slot="block-description">
           {blockDescription}
@@ -136,23 +233,55 @@
       </ListItem>
     {/if}
   {:else if leadingIcon && trailingIcon}
-    <ListItem on:click {active} {size} {disabled} {variant} {selected}>
+    <ListItem
+      on:click
+      {active}
+      {size}
+      {disabled}
+      {variant}
+      {selected}
+      {divider}
+    >
       <Octicon slot="lead" iconType={leadingIcon} />
       {title}
       <Octicon slot="trail" iconType={trailingIcon} />
     </ListItem>
   {:else if trailingIcon}
-    <ListItem on:click {active} {size} {disabled} {variant} {selected}>
+    <ListItem
+      on:click
+      {active}
+      {size}
+      {disabled}
+      {variant}
+      {selected}
+      {divider}
+    >
       {title}
       <Octicon slot="trail" iconType={trailingIcon} />
     </ListItem>
   {:else if leadingIcon}
-    <ListItem on:click {active} {size} {disabled} {variant} {selected}>
+    <ListItem
+      on:click
+      {active}
+      {size}
+      {disabled}
+      {variant}
+      {selected}
+      {divider}
+    >
       <Octicon slot="lead" iconType={leadingIcon} />
       {title}
     </ListItem>
   {:else}
-    <ListItem on:click {active} {size} {disabled} {variant} {selected}>
+    <ListItem
+      on:click
+      {active}
+      {size}
+      {disabled}
+      {variant}
+      {selected}
+      {divider}
+    >
       {title}
     </ListItem>
   {/if}
