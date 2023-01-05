@@ -4,10 +4,7 @@
   import ActionList from "../ActionList.svelte";
   import ListItem from "../ListItem.svelte";
 
-  type Option = {
-    id: number;
-    title: string;
-  };
+  import type { Option } from "./types";
 
   const dispatch = createEventDispatcher();
 
