@@ -114,3 +114,17 @@ test("render block description", () => {
   const blockDescriptionPlace = screen.getByTestId("block-description");
   expect(blockDescriptionPlace).toBeInTheDocument();
 });
+
+test("render link", () => {
+  render(ListItemView, {
+    title: "test",
+    link: "http://example.com",
+    disabled: false,
+    selected: false,
+    active: false,
+    divider: false,
+  });
+
+  const linkTag = screen.getByTestId("item-link");
+  expect(linkTag).toBeInTheDocument();
+});
