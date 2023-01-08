@@ -8,6 +8,8 @@ export default {
   component: ListItemView,
   argTypes: {
     title: { control: "text" },
+    link: { control: "text" },
+    target: { control: "text" },
     inlineDescription: { control: "text" },
     blockDescription: { control: "text" },
     selectionVariant: {
@@ -50,6 +52,8 @@ export default {
 
 type ArgsType = {
   title: string;
+  link: string;
+  target: string;
   inlineDescription: string;
   selectionVariant: SelectionVariant;
   variant: ItemVariant;

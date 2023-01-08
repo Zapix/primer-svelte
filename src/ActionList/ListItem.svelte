@@ -3,6 +3,7 @@
 
   import { getSpace, getColor, getFontSize } from "../theme";
   import LiWrapper from "./LiWrapper.svelte";
+  import LinkWrapper from "./LinkWrapper.svelte";
   import { ACTION_LIST_VARIANT } from "./constants";
   import type {
     ItemAriaRole,
@@ -13,6 +14,8 @@
   import Selection from "./Selection.svelte";
 
   const actionListVariant: SelectionVariant = getContext(ACTION_LIST_VARIANT);
+  export let link: string | undefined = undefined;
+  export let target = "_self";
   export let tabIndex = 0;
   export let variant: ItemVariant = "default";
   export let size: ItemSize = "small";
@@ -21,9 +24,30 @@
   export let disabled = false;
   export let divider = false;
   export let ariaRole: ItemAriaRole = "listitem";
+
+  const wrapper = link ? LinkWrapper : LiWrapper;
+  const wrapperProps = link
+    ? {
+        link,
+        target,
+        tabIndex,
+        variant,
+        size,
+        disabled,
+        ariaRole,
+        active,
+      }
+    : {
+        tabIndex,
+        variant,
+        size,
+        disabled,
+        ariaRole,
+        active,
+      };
 </script>
 
-<LiWrapper {tabIndex} {variant} {size} {disabled} {ariaRole} {active} on:click>
+<svelte:component this={wrapper} {...wrapperProps} on:click>
   {#if actionListVariant !== "none"}
     <div
       data-testid="selectable-place"
@@ -81,7 +105,7 @@
       <slot name="trail" />
     </div>
   {/if}
-</LiWrapper>
+</svelte:component>
 
 <style>
   .selectable {

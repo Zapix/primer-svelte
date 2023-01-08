@@ -9,6 +9,7 @@
 
   export let selectionVariant: SelectionVariant = "none";
   export let title: string;
+  export let link: string | undefined = undefined;
   export let inlineDescription = "";
   export let blockDescription = "";
   export let variant: ItemVariant = "default";
@@ -26,6 +27,7 @@
     {#if leadingIcon && trailingIcon}
       <ListItem
         on:click
+        {link}
         {active}
         {size}
         {disabled}
@@ -46,6 +48,7 @@
     {:else if trailingIcon}
       <ListItem
         on:click
+        {link}
         {active}
         {size}
         {disabled}
@@ -65,6 +68,7 @@
     {:else if leadingIcon}
       <ListItem
         on:click
+        {link}
         {active}
         {size}
         {disabled}
@@ -84,6 +88,7 @@
     {:else}
       <ListItem
         on:click
+        {link}
         {active}
         {size}
         {disabled}
@@ -104,6 +109,7 @@
     {#if leadingIcon && trailingIcon}
       <ListItem
         on:click
+        {link}
         {active}
         {size}
         {disabled}
@@ -121,6 +127,7 @@
     {:else if trailingIcon}
       <ListItem
         on:click
+        {link}
         {active}
         {size}
         {disabled}
@@ -137,6 +144,7 @@
     {:else if leadingIcon}
       <ListItem
         on:click
+        {link}
         {active}
         {size}
         {disabled}
@@ -153,6 +161,7 @@
     {:else}
       <ListItem
         on:click
+        {link}
         {active}
         {size}
         {disabled}
@@ -170,6 +179,7 @@
     {#if leadingIcon && trailingIcon}
       <ListItem
         on:click
+        {link}
         {active}
         {size}
         {disabled}
@@ -187,6 +197,7 @@
     {:else if trailingIcon}
       <ListItem
         on:click
+        {link}
         {active}
         {size}
         {disabled}
@@ -203,6 +214,7 @@
     {:else if leadingIcon}
       <ListItem
         on:click
+        {link}
         {active}
         {size}
         {disabled}
@@ -219,6 +231,7 @@
     {:else}
       <ListItem
         on:click
+        {link}
         {active}
         {size}
         {disabled}
@@ -235,6 +248,7 @@
   {:else if leadingIcon && trailingIcon}
     <ListItem
       on:click
+      {link}
       {active}
       {size}
       {disabled}
@@ -249,6 +263,7 @@
   {:else if trailingIcon}
     <ListItem
       on:click
+      {link}
       {active}
       {size}
       {disabled}
@@ -262,6 +277,7 @@
   {:else if leadingIcon}
     <ListItem
       on:click
+      {link}
       {active}
       {size}
       {disabled}
@@ -275,6 +291,7 @@
   {:else}
     <ListItem
       on:click
+      {link}
       {active}
       {size}
       {disabled}
